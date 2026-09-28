@@ -996,13 +996,46 @@ def delete_post(slug: str, current_user: str = Depends(get_current_admin)):
 # ─────────────────────────────────────────────────────────────────────────────
 # SITEMAP GENERATOR TOOL API
 # ─────────────────────────────────────────────────────────────────────────────
+def _build_sitemap_xml_in_memory(urls: set, base_url: str) -> str:
+    """Generate sitemap XML in memory — Vercel-compatible (no disk writes)."""
+    import datetime as dt
+    import urllib.parse
+    today = dt.date.today().isoformat()
+
+    def calc_priority(url):
+        try:
+            path = urllib.parse.urlparse(url).path.strip('/')
+            if not path:
+                return "1.0"
+            depth = len([p for p in path.split('/') if p])
+            return "0.8" if depth == 1 else ("0.6" if depth == 2 else "0.5")
+        except Exception:
+            return "0.5"
+
+    parts = ['<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n']
+    for url in sorted(urls):
+        priority = calc_priority(url)
+        parts.append(
+            f"  <url>\n"
+            f"    <loc>{url}</loc>\n"
+            f"    <lastmod>{today}</lastmod>\n"
+            f"    <changefreq>weekly</changefreq>\n"
+            f"    <priority>{priority}</priority>\n"
+            f"  </url>\n"
+        )
+    parts.append('</urlset>\n')
+    return "".join(parts)
+
+
 def run_sitemap_generator_job(job_id: str, target_url: str, max_pages: int):
     job = sitemap_jobs[job_id]
     try:
         root = normalise_url(target_url)
         job.update({"status": "running", "percent": 10, "step": "Connecting and discovering site URLs..."})
-        job_dir = DOWNLOADS_DIR / f"sitemap_{job_id[:8]}"
-        job_dir.mkdir(exist_ok=True)
+
+        # Use /tmp on Vercel (writable), else DOWNLOADS_DIR
+        import tempfile
+        tmp_dir = tempfile.mkdtemp()
 
         def stats_cb(stats):
             job["crawled"] = stats["crawled"]
@@ -1010,7 +1043,7 @@ def run_sitemap_generator_job(job_id: str, target_url: str, max_pages: int):
             job["percent"] = min(90, 10 + int((stats["crawled"] / max(1, max_pages)) * 80))
             job["step"]    = f"Crawled {stats['crawled']} URLs (Queue: {stats['queue_len']})..."
 
-        crawler = WebCrawler(start_url=root, output_dir=str(job_dir), max_threads=16, stats_callback=stats_cb)
+        crawler = WebCrawler(start_url=root, output_dir=tmp_dir, max_threads=16, stats_callback=stats_cb)
         try:
             import requests as req_lib
             r = req_lib.get(root.rstrip("/") + "/sitemap.xml", timeout=8, verify=False)
@@ -1024,24 +1057,25 @@ def run_sitemap_generator_job(job_id: str, target_url: str, max_pages: int):
         while not crawler.is_finished() and len(crawler.visited_urls) < max_pages:
             time.sleep(0.2)
         crawler.stop()
+
         job["step"] = "Building Google-compliant XML Sitemap..."
         job["percent"] = 92
+
         if crawler.successful_urls:
-            gen = SitemapGenerator(crawler.successful_urls, root, str(job_dir))
-            gen.generate()
-            primary_file = job_dir / "sitemap.xml" if (job_dir / "sitemap.xml").exists() else job_dir / "sitemap1.xml"
-            xml_text = primary_file.read_text(encoding="utf-8") if primary_file.exists() else ""
+            # Generate XML in memory — works on Vercel read-only filesystem
+            xml_text = _build_sitemap_xml_in_memory(crawler.successful_urls, root)
             job.update({
                 "status": "completed", "percent": 100,
                 "step": f"Sitemap generated! ({len(crawler.successful_urls)} URLs)",
                 "xml_text": xml_text,
                 "urls_count": len(crawler.successful_urls),
-                "download_file": str(primary_file)
+                "download_file": None  # No disk file on Vercel
             })
         else:
             job.update({"status": "error", "error": "No valid URLs discovered."})
     except Exception as exc:
-        job.update({"status": "error", "error": str(exc)})
+        import traceback
+        job.update({"status": "error", "error": str(exc), "traceback": traceback.format_exc()})
 
 @app.post("/api/sitemap/generate")
 def start_sitemap_generation(req: SitemapGenRequest, background_tasks: BackgroundTasks):
@@ -1060,12 +1094,18 @@ def get_sitemap_job_status(job_id: str):
 
 @app.get("/api/sitemap/download/{job_id}")
 def download_generated_sitemap(job_id: str):
-    if job_id not in sitemap_jobs or not sitemap_jobs[job_id].get("download_file"):
-        raise HTTPException(status_code=404, detail="Sitemap file not ready")
-    filepath = Path(sitemap_jobs[job_id]["download_file"])
-    if not filepath.exists():
-        raise HTTPException(status_code=404, detail="File not found")
-    return FileResponse(filepath, filename="sitemap.xml", media_type="application/xml")
+    job = sitemap_jobs.get(job_id)
+    if not job or job.get("status") != "completed":
+        raise HTTPException(status_code=404, detail="Sitemap not ready or job not found")
+    xml_text = job.get("xml_text", "")
+    if not xml_text:
+        raise HTTPException(status_code=404, detail="Sitemap XML is empty")
+    # Serve directly from memory — works on Vercel
+    return Response(
+        content=xml_text.encode("utf-8"),
+        media_type="application/xml",
+        headers={"Content-Disposition": "attachment; filename=sitemap.xml"}
+    )
 
 # ─────────────────────────────────────────────────────────────────────────────
 # RSS FEED
