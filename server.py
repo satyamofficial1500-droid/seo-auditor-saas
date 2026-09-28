@@ -125,11 +125,15 @@ app.add_middleware(
 PUBLIC_DIR    = Path(__file__).parent / "public_html"
 DOWNLOADS_DIR = Path(__file__).parent / "downloads"
 UPLOADS_DIR   = Path(__file__).parent / "uploads"
-DOWNLOADS_DIR.mkdir(exist_ok=True)
-UPLOADS_DIR.mkdir(exist_ok=True)
-
 DATA_DIR      = Path(__file__).parent / "data"
-DATA_DIR.mkdir(exist_ok=True)
+
+try:
+    DOWNLOADS_DIR.mkdir(exist_ok=True)
+    UPLOADS_DIR.mkdir(exist_ok=True)
+    DATA_DIR.mkdir(exist_ok=True)
+except (PermissionError, OSError):
+    pass # Vercel read-only filesystem bypass
+
 POSTS_FILE    = DATA_DIR / "posts.json"
 CONTACTS_FILE = DATA_DIR / "contacts.json"
 USERS_FILE    = DATA_DIR / "users.json"
