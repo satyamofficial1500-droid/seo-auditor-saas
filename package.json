@@ -1,0 +1,12 @@
+{
+  "name": "seo-auditor-backend",
+  "version": "1.0.0",
+  "description": "SEO Auditor FastAPI Server & Public Frontend",
+  "scripts": {
+    "dev": ".venv\\Scripts\\python.exe server.py",
+    "start": ".venv\\Scripts\\python.exe server.py"
+  },
+  "dependencies": {
+    "tinymce": "^8.9.2"
+  }
+}

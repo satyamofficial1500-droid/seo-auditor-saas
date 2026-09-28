@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free JSON-LD Schema Markup Generator | SEO Error Auditor</title>
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Build valid JSON-LD structured data for Article, Product, FAQ, LocalBusiness, and more. Free JSON-LD schema generator.">
+    <meta name="keywords" content="json-ld schema generator, structured data markup tool, schema markup generator free, rich snippets generator, google schema builder">
+    <link rel="canonical" href="https://seoerrorauditor.com/tools/schema-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoerrorauditor.com/tools/schema-generator">
+    <meta property="og:title" content="Free JSON-LD Schema Markup Generator | SEO Error Auditor">
+    <meta property="og:description" content="Build valid JSON-LD structured data for Article, Product, FAQ, LocalBusiness, and more. Free schema generator tool.">
+    <meta property="og:site_name" content="SEO Error Auditor">
+    <meta property="og:image" content="https://seoerrorauditor.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free JSON-LD Schema Markup Generator | SEO Error Auditor">
+    <meta name="twitter:description" content="Build valid JSON-LD structured data for Article, Product, FAQ, LocalBusiness, and more. Free schema generator tool.">
+    <meta name="twitter:image" content="https://seoerrorauditor.com/logo.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "JSON-LD Schema Markup Generator",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+
+    <!-- Background Glow Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                
+                <div class="nav-dropdown" id="navDropdownTools">
+                    <button class="nav-item dropdown-toggle" id="dropdownToggleBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" id="toolsDropdownMenu" role="menu" aria-label="Free SEO Tools">
+                        <a href="/tools/sitemap-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item" role="menuitem"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item" role="menuitem"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                
+                <div class="nav-actions-mobile">
+                    <button id="themeToggleBtnMobile" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                    <a href="/tools/sitemap-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+                </div>
+            </nav>
+            
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                <a href="/tools/sitemap-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout container">
+        
+        <!-- Hero Section -->
+        <section class="tool-hero" style="padding:3rem 0 2rem;">
+            <div class="container text-center">
+                <span class="badge badge-glow" style="margin-bottom:1rem;">Structured Data</span>
+                <h1 class="hero-title" style="font-size:2.8rem;margin-bottom:1rem;">Free <span>JSON-LD Schema</span> Markup Generator</h1>
+                <p class="hero-subtitle-top" style="max-width:720px;margin:0 auto 2rem;">Generate Google-compliant structured data markup for Organizations, Local Businesses, Articles, FAQs & Products. Instantly boost rich snippets and improve your SERP CTR.</p>
+            </div>
+        </section>
+
+        <!-- Tool Interface -->
+        <div style="max-width:1100px;margin:0 auto 2rem;">
+<p class="hero-subtitle">Create rich snippets and structured data markup to win Google Rich Results and increase click-through rates.</p>
+
+<div class="tool-card" style="max-width:1100px;margin:2rem auto;padding:2rem;text-align:left;">
+  <!-- Schema Type Selector -->
+  <div class="form-group mb-4">
+    <label style="font-weight:700;font-size:1rem;margin-bottom:8px;display:block;">Select Schema Type:</label>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button type="button" class="btn btn-sm btn-primary schema-type-btn active" data-type="organization">Organization</button>
+      <button type="button" class="btn btn-sm btn-outline schema-type-btn" data-type="localbusiness">Local Business</button>
+      <button type="button" class="btn btn-sm btn-outline schema-type-btn" data-type="article">Article / Blog</button>
+      <button type="button" class="btn btn-sm btn-outline schema-type-btn" data-type="faq">FAQ Page</button>
+      <button type="button" class="btn btn-sm btn-outline schema-type-btn" data-type="product">Product</button>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- Form Inputs Area -->
+    <div id="schemaInputsArea">
+      <!-- Dynamic Form inserted by JS -->
+    </div>
+
+    <!-- Output JSON-LD -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-code" style="color:var(--accent-cyan);"></i> JSON-LD Code
+      </h3>
+
+      <div style="position:relative;">
+        <pre id="scOutput" style="background:var(--muted);border:1px solid var(--border);border-radius:12px;padding:1.2rem;font-family:monospace;font-size:0.85rem;color:var(--foreground);min-height:320px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;"></pre>
+        <button id="scCopyBtn" class="btn btn-sm btn-primary" style="position:absolute;top:10px;right:10px;">
+          <i class="fa-solid fa-copy"></i> Copy Script
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </section>
+        </div>
+
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section container" style="max-width:1100px;margin:0 auto;">
+
+        <!-- How to Use -->
+        <div class="how-it-works-section">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:8px;">How to Use This Tool</h2>
+            <p style="color:var(--muted-foreground);font-size:1rem;margin-bottom:0;">Three simple steps to get your result in seconds.</p>
+            <div class="steps-grid">
+            <div class="step-card glass-card text-center">
+                <div class="step-num">01</div>
+                <div class="step-icon"><i class="fa-solid fa-list-check"></i></div>
+                <h3>Select Schema Type</h3>
+                <p>Choose from Organization, Local Business, Article, FAQ, or Product schema types.</p>
+            </div>
+            <div class="step-card glass-card text-center">
+                <div class="step-num">02</div>
+                <div class="step-icon"><i class="fa-solid fa-keyboard"></i></div>
+                <h3>Fill in Your Details</h3>
+                <p>Enter your business or content details into the dynamic form fields.</p>
+            </div>
+            <div class="step-card glass-card text-center">
+                <div class="step-num">03</div>
+                <div class="step-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Copy & Paste JSON-LD</h3>
+                <p>Copy the generated script tag and paste it into your website's &lt;head&gt; section.</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Benefits / Features -->
+        <div style="margin-top:60px;margin-bottom:60px;">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:8px;">Why Use Our Tool?</h2>
+            <p style="color:var(--muted-foreground);font-size:1rem;margin-bottom:2rem;">Built for SEO professionals, developers, and content creators.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+                
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-star" style="color:#f59e0b;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Win Rich Snippets</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Structured data helps Google display rich results like star ratings, FAQs, and product prices directly in search.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-arrow-up-right-dots" style="color:#10b981;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Improve CTR</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Rich results get up to 30% higher click-through rates than standard blue link results.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-circle-check" style="color:#6366f1;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Google Compliant</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">All generated schemas follow the latest schema.org specifications and Google's structured data guidelines.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-bolt" style="color:#06b6d4;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Instant Generation</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Real-time preview updates as you type. No server requests needed — works 100% client-side.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="glass-card" style="padding:2.5rem;margin-top:60px;margin-bottom:60px;">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:1.5rem;">
+                <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:10px;"></i>Frequently Asked Questions
+            </h2>
+            
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>What is JSON-LD schema markup?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">JSON-LD (JavaScript Object Notation for Linked Data) is the recommended format by Google for adding structured data to web pages. It helps search engines understand your content context.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Which schema types does this tool support?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">This tool supports Organization, Local Business, Article/Blog Post, FAQ Page, and Product schemas — the five most impactful types for SEO.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Do I need to know coding to use this tool?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">No! Simply fill in the form fields and copy the generated &lt;script&gt; tag. Paste it into your page's &lt;head&gt; section and you're done.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Will schema markup directly improve my rankings?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">Schema markup itself is not a direct ranking factor, but it enables rich results which significantly improve CTR, which is a strong indirect ranking signal.</p>
+                    </div>
+        </div>
+
+    </section>
+
+    </main>
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Word Counter",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoerrorauditor.com/">
+    <meta property="og:title" content="Free SEO Tools Online 2026">
+    <meta property="og:description" content="Use free SEO tools online at SEO Error Auditor.">
+    <meta property="og:image" content="https://seoerrorauditor.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://seoerrorauditor.com/logo.png">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+
+    <!-- Background Glow Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header Navigation -->
+        <!-- Header Navigation -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                
+                <div class="nav-dropdown" id="navDropdownTools">
+                    <button class="nav-item dropdown-toggle" id="dropdownToggleBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" id="toolsDropdownMenu" role="menu" aria-label="Free SEO Tools">
+                        
+                        
+                        
+                        <a href="/tools/sitemap-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item" role="menuitem"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item" role="menuitem"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                
+                <div class="nav-actions-mobile">
+                    <button id="themeToggleBtnMobile" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                    <a href="/tools/keyword-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+                </div>
+            </nav>
+            
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                <a href="/tools/keyword-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout container">
+        
+        <!-- Hero Section -->
+        <section class="hero-section text-center tool-hero my-4">
+            
+<p class="hero-subtitle">Create rich snippets and structured data markup to win Google Rich Results and increase click-through rates.</p>
+
+<div class="tool-card" style="max-width:1100px;margin:2rem auto;padding:2rem;text-align:left;">
+  <!-- Schema Type Selector -->
+  <div class="form-group mb-4">
+    <label style="font-weight:700;font-size:1rem;margin-bottom:8px;display:block;">Select Schema Type:</label>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button type="button" class="btn btn-sm btn-primary schema-type-btn active" data-type="organization">Organization</button>
+      <button type="button" class="btn btn-sm btn-outline schema-type-btn" data-type="localbusiness">Local Business</button>
+      <button type="button" class="btn btn-sm btn-outline schema-type-btn" data-type="article">Article / Blog</button>
+      <button type="button" class="btn btn-sm btn-outline schema-type-btn" data-type="faq">FAQ Page</button>
+      <button type="button" class="btn btn-sm btn-outline schema-type-btn" data-type="product">Product</button>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- Form Inputs Area -->
+    <div id="schemaInputsArea">
+      <!-- Dynamic Form inserted by JS -->
+    </div>
+
+    <!-- Output JSON-LD -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-code" style="color:var(--accent-cyan);"></i> JSON-LD Code
+      </h3>
+
+      <div style="position:relative;">
+        <pre id="scOutput" style="background:var(--muted);border:1px solid var(--border);border-radius:12px;padding:1.2rem;font-family:monospace;font-size:0.85rem;color:var(--foreground);min-height:320px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;"></pre>
+        <button id="scCopyBtn" class="btn btn-sm btn-primary" style="position:absolute;top:10px;right:10px;">
+          <i class="fa-solid fa-copy"></i> Copy Script
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </section>
+        
+        
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const inputsArea = document.getElementById('schemaInputsArea');
+  const output = document.getElementById('scOutput');
+  const copyBtn = document.getElementById('scCopyBtn');
+  const typeBtns = document.querySelectorAll('.schema-type-btn');
+
+  let currentType = 'organization';
+
+  const templates = {
+    organization: `
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Organization Name</label>
+        <input type="text" id="scOrgName" class="form-control" value="Acme Corporation" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Website URL</label>
+        <input type="url" id="scOrgUrl" class="form-control" value="https://example.com" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Logo Image URL</label>
+        <input type="url" id="scOrgLogo" class="form-control" value="https://example.com/logo.png" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Social Profiles (one per line)</label>
+        <textarea id="scOrgSocial" rows="3" class="form-control" style="width:100%;">https://facebook.com/acme\nhttps://twitter.com/acme\nhttps://linkedin.com/company/acme</textarea>
+      </div>
+    `,
+    localbusiness: `
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Business Name</label>
+        <input type="text" id="scBizName" class="form-control" value="Joe's Pizza NYC" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Website URL</label>
+        <input type="url" id="scBizUrl" class="form-control" value="https://joespizza.com" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Telephone</label>
+        <input type="text" id="scBizPhone" class="form-control" value="+1-212-555-0199" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Street Address & City</label>
+        <input type="text" id="scBizAddr" class="form-control" value="7 Carmine St, New York, NY 10014" style="width:100%;">
+      </div>
+    `,
+    article: `
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Article Headline</label>
+        <input type="text" id="scArtTitle" class="form-control" value="10 Proven SEO Tips for 2026" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Article URL</label>
+        <input type="url" id="scArtUrl" class="form-control" value="https://example.com/seo-tips" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Author Name</label>
+        <input type="text" id="scArtAuthor" class="form-control" value="Sarah Jenkins" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Featured Image URL</label>
+        <input type="url" id="scArtImg" class="form-control" value="https://example.com/banner.jpg" style="width:100%;">
+      </div>
+    `,
+    faq: `
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Question 1</label>
+        <input type="text" id="scFaqQ1" class="form-control" value="What is Search Engine Optimization?" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Answer 1</label>
+        <textarea id="scFaqA1" rows="2" class="form-control" style="width:100%;">SEO stands for Search Engine Optimization, which is the process of improving your site to increase visibility on search engines.</textarea>
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Question 2</label>
+        <input type="text" id="scFaqQ2" class="form-control" value="How long does SEO take to work?" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Answer 2</label>
+        <textarea id="scFaqA2" rows="2" class="form-control" style="width:100%;">Most SEO campaigns begin seeing measurable ranking improvements within 3 to 6 months.</textarea>
+      </div>
+    `,
+    product: `
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Product Name</label>
+        <input type="text" id="scProdName" class="form-control" value="Ergonomic Mechanical Keyboard" style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Price & Currency</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <input type="number" id="scProdPrice" class="form-control" value="129.99" step="0.01">
+          <input type="text" id="scProdCur" class="form-control" value="USD">
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Product Description</label>
+        <input type="text" id="scProdDesc" class="form-control" value="Premium wireless split ergonomic keyboard with hot-swappable switches." style="width:100%;">
+      </div>
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Availability</label>
+        <select id="scProdAvail" class="form-control" style="width:100%;">
+          <option value="https://schema.org/InStock">In Stock</option>
+          <option value="https://schema.org/OutOfStock">Out of Stock</option>
+        </select>
+      </div>
+    `
+  };
+
+  function renderForm() {
+    inputsArea.innerHTML = templates[currentType] || '';
+    inputsArea.querySelectorAll('input, textarea, select').forEach(el => {
+      el.addEventListener('input', generateSchema);
+      el.addEventListener('change', generateSchema);
+    });
+    generateSchema();
+  }
+
+  function generateSchema() {
+    let schema = { "@context": "https://schema.org" };
+
+    if (currentType === 'organization') {
+      schema["@type"] = "Organization";
+      schema["name"] = document.getElementById('scOrgName')?.value || '';
+      schema["url"] = document.getElementById('scOrgUrl')?.value || '';
+      schema["logo"] = document.getElementById('scOrgLogo')?.value || '';
+      const socials = (document.getElementById('scOrgSocial')?.value || '').split('\n').map(s=>s.trim()).filter(Boolean);
+      if (socials.length) schema["sameAs"] = socials;
+    } else if (currentType === 'localbusiness') {
+      schema["@type"] = "LocalBusiness";
+      schema["name"] = document.getElementById('scBizName')?.value || '';
+      schema["url"] = document.getElementById('scBizUrl')?.value || '';
+      schema["telephone"] = document.getElementById('scBizPhone')?.value || '';
+      schema["address"] = {
+        "@type": "PostalAddress",
+        "streetAddress": document.getElementById('scBizAddr')?.value || ''
+      };
+    } else if (currentType === 'article') {
+      schema["@type"] = "Article";
+      schema["headline"] = document.getElementById('scArtTitle')?.value || '';
+      schema["url"] = document.getElementById('scArtUrl')?.value || '';
+      schema["image"] = document.getElementById('scArtImg')?.value || '';
+      schema["author"] = {
+        "@type": "Person",
+        "name": document.getElementById('scArtAuthor')?.value || ''
+      };
+    } else if (currentType === 'faq') {
+      schema["@type"] = "FAQPage";
+      schema["mainEntity"] = [
+        {
+          "@type": "Question",
+          "name": document.getElementById('scFaqQ1')?.value || '',
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": document.getElementById('scFaqA1')?.value || ''
+          }
+        },
+        {
+          "@type": "Question",
+          "name": document.getElementById('scFaqQ2')?.value || '',
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": document.getElementById('scFaqA2')?.value || ''
+          }
+        }
+      ];
+    } else if (currentType === 'product') {
+      schema["@type"] = "Product";
+      schema["name"] = document.getElementById('scProdName')?.value || '';
+      schema["description"] = document.getElementById('scProdDesc')?.value || '';
+      schema["offers"] = {
+        "@type": "Offer",
+        "price": document.getElementById('scProdPrice')?.value || '0',
+        "priceCurrency": document.getElementById('scProdCur')?.value || 'USD',
+        "availability": document.getElementById('scProdAvail')?.value || 'https://schema.org/InStock'
+      };
+    }
+
+    const scriptTag = `<script type="application/ld+json">\n` + JSON.stringify(schema, null, 2) + `\n<\/script>`;
+    output.textContent = scriptTag;
+  }
+
+  typeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      typeBtns.forEach(b => { b.classList.remove('btn-primary', 'active'); b.classList.add('btn-outline'); });
+      btn.classList.remove('btn-outline');
+      btn.classList.add('btn-primary', 'active');
+      currentType = btn.dataset.type;
+      renderForm();
+    });
+  });
+
+  renderForm();
+
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(output.textContent).then(() => {
+      copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      setTimeout(() => { copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Script'; }, 2000);
+    });
+  });
+});
+</script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand-col">
+                <a href="/" class="brand footer-brand">
+                    <img src="/footer-logo.png" alt="SEO Error Auditor" class="footer-logo-img">
+                </a>
+                <p class="footer-desc">Free technical SEO tools for webmasters, marketers & SEO agencies. No sign-up required.</p>
+                <div class="footer-socials">
+                    <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> 100% Free &amp; Secure</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Free SEO Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="/tools/sitemap-generator">XML Sitemap Generator</a></li>
+                    <li><a href="/tools/schema-generator">JSON-LD Schema Builder</a></li>
+                    <li><a href="/tools/meta-tag-generator">Meta Tags Generator</a></li>
+                    <li><a href="/tools/og-graph-generator">Open Graph Generator</a></li>
+                    <li><a href="/tools/robots-txt-generator">Robots.txt Generator</a></li>
+                    <li><a href="/tools/llms-txt-generator">LLMs.txt Generator</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="/blog">SEO Guides &amp; Tutorials</a></li>
+                    <li><a href="/blog/complete-technical-seo-audit-checklist-2026">Technical SEO Checklist 2026</a></li>
+                    <li><a href="/blog/how-to-fix-404-broken-links-guide">404 Error Fix Guide</a></li>
+                    <li><a href="/#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company &amp; Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom text-center">
+            <p>&copy; 2026 SEO Error Auditor (seoerrorauditor.com). All rights reserved.</p>
+        </div>
+    </footer>
+<script src="/config.js"></script>
+<script src="/app.js?v=13"></script>
+
+            <!-- Enquiry Popup -->
+    <div id="enquiryPopupOverlay" class="popup-overlay">
+        <div class="popup-modal">
+            <button class="popup-close" id="popupCloseBtn" aria-label="Close">&times;</button>
+
+            <div class="popup-header">
+                <div class="popup-header-icon">&#128640;</div>
+                <h3>Need Help With Your Project?</h3>
+                <p>Tell us a few details &amp; our expert team will get in touch with you shortly.</p>
+            </div>
+
+            <div class="popup-body">
+                <form id="enquiryFormPopup" autocomplete="off">
+                    <div class="popup-field">
+                        <label for="popupName">Full Name</label>
+                        <div class="popup-input-wrap">
+                            <input type="text" id="popupName" placeholder="Enter your full name" required minlength="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                    </div>
+                    <div class="popup-field">
+                        <label for="popupEmail">Email Address</label>
+                        <div class="popup-input-wrap">
+                            <input type="email" id="popupEmail" placeholder="Enter your email" required>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="popup-field">
+                        <label for="popupMobile">Mobile Number</label>
+                        <div class="popup-input-wrap">
+                            <input type="tel" id="popupMobile" placeholder="Enter your mobile number" pattern="[\+]?[0-9]{10,13}" required>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                    </div>
+                    <button type="submit" class="popup-submit-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Send Enquiry
+                    </button>
+                    <div id="popupFormMessage" class="popup-form-msg"></div>
+                </form>
+                <div class="popup-trust">
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> 100% Secure</span>
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> No Spam Ever</span>
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Quick Response</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

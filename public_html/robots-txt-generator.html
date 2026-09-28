@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Robots.txt Generator | SEO Error Auditor</title>
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Create a valid robots.txt file with custom allow/disallow rules. Free robots.txt generator tool.">
+    <meta name="keywords" content="robots.txt generator, create robots txt file, robots txt builder free, block search engine bots, sitemap robots txt">
+    <link rel="canonical" href="https://seoerrorauditor.com/tools/robots-txt-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoerrorauditor.com/tools/robots-txt-generator">
+    <meta property="og:title" content="Free Robots.txt Generator — Block & Allow Rules | SEO Error Auditor">
+    <meta property="og:description" content="Create a valid robots.txt file with custom allow/disallow rules for search engine bots. Free robots.txt generator.">
+    <meta property="og:site_name" content="SEO Error Auditor">
+    <meta property="og:image" content="https://seoerrorauditor.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Robots.txt Generator — Block & Allow Rules | SEO Error Auditor">
+    <meta name="twitter:description" content="Create a valid robots.txt file with custom allow/disallow rules for search engine bots. Free robots.txt generator.">
+    <meta name="twitter:image" content="https://seoerrorauditor.com/logo.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Robots.txt Generator",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+
+    <!-- Background Glow Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                
+                <div class="nav-dropdown" id="navDropdownTools">
+                    <button class="nav-item dropdown-toggle" id="dropdownToggleBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" id="toolsDropdownMenu" role="menu" aria-label="Free SEO Tools">
+                        <a href="/tools/sitemap-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item" role="menuitem"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item" role="menuitem"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                
+                <div class="nav-actions-mobile">
+                    <button id="themeToggleBtnMobile" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                    <a href="/tools/sitemap-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+                </div>
+            </nav>
+            
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                <a href="/tools/sitemap-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout container">
+        
+        <!-- Hero Section -->
+        <section class="tool-hero" style="padding:3rem 0 2rem;">
+            <div class="container text-center">
+                <span class="badge badge-glow" style="margin-bottom:1rem;">Technical SEO</span>
+                <h1 class="hero-title" style="font-size:2.8rem;margin-bottom:1rem;">Free <span>Robots.txt</span> Generator</h1>
+                <p class="hero-subtitle-top" style="max-width:720px;margin:0 auto 2rem;">Create a perfectly formatted robots.txt file in seconds. Control which pages search engine crawlers can access, block private directories, and add your sitemap reference.</p>
+            </div>
+        </section>
+
+        <!-- Tool Interface -->
+        <div style="max-width:1100px;margin:0 auto 2rem;">
+<p class="hero-subtitle">Generate clean, accurate robots.txt directives for Google, Bing, Yahoo, and other crawlers in seconds.</p>
+
+<div class="tool-card" style="max-width:1100px;margin:2rem auto;padding:2rem;text-align:left;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- Inputs -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-shield-halved" style="color:var(--accent-cyan);"></i> Bot Directives
+      </h3>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Default Access</label>
+        <select id="rbDefault" class="form-control" style="width:100%;">
+          <option value="allow">Allow All Robots (Recommended)</option>
+          <option value="disallow">Disallow All Robots</option>
+        </select>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Crawl Delay</label>
+        <select id="rbDelay" class="form-control" style="width:100%;">
+          <option value="none">No Delay (Default)</option>
+          <option value="5">5 seconds</option>
+          <option value="10">10 seconds</option>
+          <option value="20">20 seconds</option>
+        </select>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">XML Sitemap URL</label>
+        <input type="url" id="rbSitemap" class="form-control" placeholder="https://example.com/sitemap.xml" style="width:100%;">
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Disallowed Directories (one per line)</label>
+        <textarea id="rbDisallow" rows="4" class="form-control" placeholder="/admin/&#10;/cgi-bin/&#10;/private/&#10;/tmp/" style="width:100%;font-family:monospace;"></textarea>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Allowed Directories (one per line)</label>
+        <textarea id="rbAllow" rows="3" class="form-control" placeholder="/public/&#10;/assets/images/" style="width:100%;font-family:monospace;"></textarea>
+      </div>
+    </div>
+
+    <!-- Output Box -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-file-code" style="color:var(--accent-indigo);"></i> Generated robots.txt
+      </h3>
+
+      <div style="position:relative;">
+        <pre id="rbOutput" style="background:var(--muted);border:1px solid var(--border);border-radius:12px;padding:1.2rem;font-family:monospace;font-size:0.9rem;color:var(--foreground);min-height:300px;line-height:1.6;white-space:pre-wrap;"></pre>
+        <div style="position:absolute;top:10px;right:10px;display:flex;gap:8px;">
+          <button id="rbCopyBtn" class="btn btn-sm btn-primary">
+            <i class="fa-solid fa-copy"></i> Copy
+          </button>
+          <button id="rbDownloadBtn" class="btn btn-sm btn-outline">
+            <i class="fa-solid fa-download"></i> Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section container" style="max-width:1100px;margin:0 auto;">
+
+        <!-- How to Use -->
+        <div class="how-it-works-section">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:8px;">How to Use This Tool</h2>
+            <p style="color:var(--muted-foreground);font-size:1rem;margin-bottom:0;">Three simple steps to get your result in seconds.</p>
+            <div class="steps-grid">
+            <div class="step-card glass-card text-center">
+                <div class="step-num">01</div>
+                <div class="step-icon"><i class="fa-solid fa-robot"></i></div>
+                <h3>Select User Agents</h3>
+                <p>Choose which bots to configure: all bots, Googlebot, Bingbot, or specific crawlers you want to control.</p>
+            </div>
+            <div class="step-card glass-card text-center">
+                <div class="step-num">02</div>
+                <div class="step-icon"><i class="fa-solid fa-folder-minus"></i></div>
+                <h3>Set Allow/Disallow Rules</h3>
+                <p>Specify which directories and pages to allow or block from search engine crawlers.</p>
+            </div>
+            <div class="step-card glass-card text-center">
+                <div class="step-num">03</div>
+                <div class="step-icon"><i class="fa-solid fa-download"></i></div>
+                <h3>Download & Upload</h3>
+                <p>Download your robots.txt file and upload it to your website's root directory (e.g., example.com/robots.txt).</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Benefits / Features -->
+        <div style="margin-top:60px;margin-bottom:60px;">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:8px;">Why Use Our Tool?</h2>
+            <p style="color:var(--muted-foreground);font-size:1rem;margin-bottom:2rem;">Built for SEO professionals, developers, and content creators.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+                
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-shield-halved" style="color:#6366f1;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Protect Private Pages</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Block admin panels, login pages, staging environments and internal tools from being indexed by search engines.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-gauge-high" style="color:#10b981;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Improve Crawl Budget</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Help search engines focus their crawl budget on your important pages by preventing wasteful crawling of low-value URLs.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-sitemap" style="color:#f59e0b;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Sitemap Integration</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Automatically include your sitemap.xml URL in the robots.txt file so search engines can discover all your pages.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-check-circle" style="color:#06b6d4;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">SEO Best Practices</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Generated rules follow Google's official robots.txt specifications and crawling best practices.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="glass-card" style="padding:2.5rem;margin-top:60px;margin-bottom:60px;">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:1.5rem;">
+                <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:10px;"></i>Frequently Asked Questions
+            </h2>
+            
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>What is a robots.txt file?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">A robots.txt file is a plain text file placed at the root of your website that tells search engine crawlers which pages or sections they can and cannot crawl.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Does blocking a page in robots.txt remove it from Google?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">No. Blocking in robots.txt prevents crawling but doesn't remove already-indexed pages. To remove indexed pages, use the noindex meta tag or Google Search Console's URL removal tool.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Where should I place my robots.txt file?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">The robots.txt file must be placed in the root directory of your website at yoursite.com/robots.txt — it will not work in subdirectories.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Should I block CSS and JavaScript files in robots.txt?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">No! Google needs to access CSS and JS files to render and understand your pages. Blocking them can harm your rankings.</p>
+                    </div>
+        </div>
+
+    </section>
+
+    </main>
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Word Counter",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoerrorauditor.com/">
+    <meta property="og:title" content="Free SEO Tools Online 2026">
+    <meta property="og:description" content="Use free SEO tools online at SEO Error Auditor.">
+    <meta property="og:image" content="https://seoerrorauditor.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://seoerrorauditor.com/logo.png">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+
+    <!-- Background Glow Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header Navigation -->
+        <!-- Header Navigation -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                
+                <div class="nav-dropdown" id="navDropdownTools">
+                    <button class="nav-item dropdown-toggle" id="dropdownToggleBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" id="toolsDropdownMenu" role="menu" aria-label="Free SEO Tools">
+                        
+                        
+                        
+                        <a href="/tools/sitemap-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item" role="menuitem"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item" role="menuitem"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                
+                <div class="nav-actions-mobile">
+                    <button id="themeToggleBtnMobile" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                    <a href="/tools/keyword-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+                </div>
+            </nav>
+            
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                <a href="/tools/keyword-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout container">
+        
+        <!-- Hero Section -->
+        <section class="hero-section text-center tool-hero my-4">
+            
+<p class="hero-subtitle">Generate clean, accurate robots.txt directives for Google, Bing, Yahoo, and other crawlers in seconds.</p>
+
+<div class="tool-card" style="max-width:1100px;margin:2rem auto;padding:2rem;text-align:left;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- Inputs -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-shield-halved" style="color:var(--accent-cyan);"></i> Bot Directives
+      </h3>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Default Access</label>
+        <select id="rbDefault" class="form-control" style="width:100%;">
+          <option value="allow">Allow All Robots (Recommended)</option>
+          <option value="disallow">Disallow All Robots</option>
+        </select>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Crawl Delay</label>
+        <select id="rbDelay" class="form-control" style="width:100%;">
+          <option value="none">No Delay (Default)</option>
+          <option value="5">5 seconds</option>
+          <option value="10">10 seconds</option>
+          <option value="20">20 seconds</option>
+        </select>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">XML Sitemap URL</label>
+        <input type="url" id="rbSitemap" class="form-control" placeholder="https://example.com/sitemap.xml" style="width:100%;">
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Disallowed Directories (one per line)</label>
+        <textarea id="rbDisallow" rows="4" class="form-control" placeholder="/admin/&#10;/cgi-bin/&#10;/private/&#10;/tmp/" style="width:100%;font-family:monospace;"></textarea>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Allowed Directories (one per line)</label>
+        <textarea id="rbAllow" rows="3" class="form-control" placeholder="/public/&#10;/assets/images/" style="width:100%;font-family:monospace;"></textarea>
+      </div>
+    </div>
+
+    <!-- Output Box -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-file-code" style="color:var(--accent-indigo);"></i> Generated robots.txt
+      </h3>
+
+      <div style="position:relative;">
+        <pre id="rbOutput" style="background:var(--muted);border:1px solid var(--border);border-radius:12px;padding:1.2rem;font-family:monospace;font-size:0.9rem;color:var(--foreground);min-height:300px;line-height:1.6;white-space:pre-wrap;"></pre>
+        <div style="position:absolute;top:10px;right:10px;display:flex;gap:8px;">
+          <button id="rbCopyBtn" class="btn btn-sm btn-primary">
+            <i class="fa-solid fa-copy"></i> Copy
+          </button>
+          <button id="rbDownloadBtn" class="btn btn-sm btn-outline">
+            <i class="fa-solid fa-download"></i> Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </section>
+        
+        
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const dflt = document.getElementById('rbDefault');
+  const delay = document.getElementById('rbDelay');
+  const sitemap = document.getElementById('rbSitemap');
+  const disallow = document.getElementById('rbDisallow');
+  const allow = document.getElementById('rbAllow');
+  const output = document.getElementById('rbOutput');
+  const copyBtn = document.getElementById('rbCopyBtn');
+  const downloadBtn = document.getElementById('rbDownloadBtn');
+
+  function update() {
+    let lines = ['User-agent: *'];
+    if (dflt.value === 'disallow') {
+      lines.push('Disallow: /');
+    } else {
+      const dis = disallow.value.trim().split('\n').map(l => l.trim()).filter(Boolean);
+      dis.forEach(d => { lines.push(`Disallow: ${d.startsWith('/') ? d : '/' + d}`); });
+
+      const alw = allow.value.trim().split('\n').map(l => l.trim()).filter(Boolean);
+      alw.forEach(a => { lines.push(`Allow: ${a.startsWith('/') ? a : '/' + a}`); });
+
+      if (dis.length === 0 && alw.length === 0) {
+        lines.push('Disallow:');
+      }
+    }
+
+    if (delay.value !== 'none') {
+      lines.push(`Crawl-delay: ${delay.value}`);
+    }
+
+    const sm = sitemap.value.trim();
+    if (sm) {
+      lines.push('');
+      lines.push(`Sitemap: ${sm}`);
+    }
+
+    output.textContent = lines.join('\n');
+  }
+
+  [dflt, delay, sitemap, disallow, allow].forEach(el => {
+    el.addEventListener('input', update);
+    el.addEventListener('change', update);
+  });
+
+  update();
+
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(output.textContent).then(() => {
+      copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      setTimeout(() => { copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy'; }, 2000);
+    });
+  });
+
+  downloadBtn.addEventListener('click', () => {
+    const blob = new Blob([output.textContent], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'robots.txt';
+    a.click();
+  });
+});
+</script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand-col">
+                <a href="/" class="brand footer-brand">
+                    <img src="/footer-logo.png" alt="SEO Error Auditor" class="footer-logo-img">
+                </a>
+                <p class="footer-desc">Free technical SEO tools for webmasters, marketers & SEO agencies. No sign-up required.</p>
+                <div class="footer-socials">
+                    <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> 100% Free &amp; Secure</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Free SEO Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="/tools/sitemap-generator">XML Sitemap Generator</a></li>
+                    <li><a href="/tools/schema-generator">JSON-LD Schema Builder</a></li>
+                    <li><a href="/tools/meta-tag-generator">Meta Tags Generator</a></li>
+                    <li><a href="/tools/og-graph-generator">Open Graph Generator</a></li>
+                    <li><a href="/tools/robots-txt-generator">Robots.txt Generator</a></li>
+                    <li><a href="/tools/llms-txt-generator">LLMs.txt Generator</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="/blog">SEO Guides &amp; Tutorials</a></li>
+                    <li><a href="/blog/complete-technical-seo-audit-checklist-2026">Technical SEO Checklist 2026</a></li>
+                    <li><a href="/blog/how-to-fix-404-broken-links-guide">404 Error Fix Guide</a></li>
+                    <li><a href="/#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company &amp; Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom text-center">
+            <p>&copy; 2026 SEO Error Auditor (seoerrorauditor.com). All rights reserved.</p>
+        </div>
+    </footer>
+<script src="/config.js"></script>
+<script src="/app.js?v=13"></script>
+
+            <!-- Enquiry Popup -->
+    <div id="enquiryPopupOverlay" class="popup-overlay">
+        <div class="popup-modal">
+            <button class="popup-close" id="popupCloseBtn" aria-label="Close">&times;</button>
+
+            <div class="popup-header">
+                <div class="popup-header-icon">&#128640;</div>
+                <h3>Need Help With Your Project?</h3>
+                <p>Tell us a few details &amp; our expert team will get in touch with you shortly.</p>
+            </div>
+
+            <div class="popup-body">
+                <form id="enquiryFormPopup" autocomplete="off">
+                    <div class="popup-field">
+                        <label for="popupName">Full Name</label>
+                        <div class="popup-input-wrap">
+                            <input type="text" id="popupName" placeholder="Enter your full name" required minlength="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                    </div>
+                    <div class="popup-field">
+                        <label for="popupEmail">Email Address</label>
+                        <div class="popup-input-wrap">
+                            <input type="email" id="popupEmail" placeholder="Enter your email" required>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="popup-field">
+                        <label for="popupMobile">Mobile Number</label>
+                        <div class="popup-input-wrap">
+                            <input type="tel" id="popupMobile" placeholder="Enter your mobile number" pattern="[\+]?[0-9]{10,13}" required>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                    </div>
+                    <button type="submit" class="popup-submit-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Send Enquiry
+                    </button>
+                    <div id="popupFormMessage" class="popup-form-msg"></div>
+                </form>
+                <div class="popup-trust">
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> 100% Secure</span>
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> No Spam Ever</span>
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Quick Response</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

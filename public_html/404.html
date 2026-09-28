@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | SEO Error Auditor</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            <nav class="nav-links" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+            </nav>
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-layout container">
+        <div class="page-404-wrapper">
+            <div class="page-404-code" aria-hidden="true">404</div>
+            <h1>Page Not Found</h1>
+            <p>The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+            <div class="page-404-links">
+                <a href="/" class="btn btn-primary btn-glow"><i class="fa-solid fa-house"></i> Go to Homepage</a>
+                <a href="/blog" class="btn btn-outline"><i class="fa-solid fa-newspaper"></i> SEO Guides</a>
+                <a href="/tools/meta-tag-generator" class="btn btn-outline"><i class="fa-solid fa-tags"></i> Meta Tag Generator</a>
+                <a href="/tools/schema-generator" class="btn btn-outline"><i class="fa-solid fa-code"></i> Schema Builder</a>
+            </div>
+
+            <div style="margin-top:48px; width:100%; max-width:640px;">
+                <h2 style="font-size:1rem; color:var(--muted-foreground); margin-bottom:16px; text-transform:uppercase; letter-spacing:0.06em;">Free SEO Tools</h2>
+                <div class="related-tools-grid">
+                    <a href="/tools/sitemap-generator"      class="related-tool-card"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                    <a href="/tools/robots-txt-generator"   class="related-tool-card"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                    <a href="/tools/og-graph-generator"     class="related-tool-card"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                    <a href="/tools/llms-txt-generator"     class="related-tool-card"><i class="fa-solid fa-robot"></i> LLMs.txt Generator</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-bottom text-center">
+            <p>&copy; 2026 SEO Error Auditor (seoerrorauditor.com). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/config.js"></script>
+    <script src="/app.js?v=13"></script>
+</body>
+</html>

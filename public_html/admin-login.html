@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | SEO Error Auditor</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css?v=13">
+    <style>
+        .login-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            padding: 2.5rem;
+        }
+        .login-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .login-logo img { height: 48px; }
+        .login-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .login-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .login-error {
+            background: rgba(239,68,68,0.15);
+            border: 1px solid rgba(239,68,68,0.4);
+            color: #fb7185;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            display: none;
+        }
+        .login-error.show { display: block; }
+    </style>
+</head>
+<body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <div class="login-wrapper">
+        <div class="glass-card login-card">
+            <div class="login-logo">
+                <img src="/logo.png" alt="SEO Error Auditor">
+            </div>
+            <h1 class="login-title"><i class="fa-solid fa-lock"></i> Admin Login</h1>
+            <p class="login-subtitle">Enter credentials to access the CMS panel</p>
+
+            <div id="loginError" class="login-error">
+                <i class="fa-solid fa-circle-exclamation"></i> <span id="loginErrorMsg">Invalid username or password.</span>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group mb-4">
+                    <label class="form-label"><i class="fa-solid fa-user"></i> Username</label>
+                    <input type="text" id="loginUsername" class="form-control" placeholder="admin" required autocomplete="username">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="form-label"><i class="fa-solid fa-key"></i> Password</label>
+                    <input type="password" id="loginPassword" class="form-control" placeholder="••••••••••" required autocomplete="current-password">
+                </div>
+                <button type="submit" id="loginBtn" class="btn btn-emerald btn-glow w-100" style="width:100%; justify-content:center;">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login to Admin Panel
+                </button>
+            </form>
+
+            <div class="text-center mt-4">
+                <a href="/" style="color:var(--text-secondary); font-size:0.85rem;"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/config.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // If already logged in, redirect to admin
+        if (sessionStorage.getItem('adminToken')) {
+            window.location.href = '/admin';
+            return;
+        }
+
+        const form = document.getElementById('loginForm');
+        const btn = document.getElementById('loginBtn');
+        const errorDiv = document.getElementById('loginError');
+        const errorMsg = document.getElementById('loginErrorMsg');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Logging in...';
+            errorDiv.classList.remove('show');
+
+            try {
+                const res = await fetch('/api/admin/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                if (!res.ok) {
+                    const data = await res.json();
+                    throw new Error(data.detail || 'Login failed');
+                }
+
+                const data = await res.json();
+                sessionStorage.setItem('adminToken', data.access_token);
+                sessionStorage.setItem('adminUser', data.username);
+                window.location.href = '/admin';
+
+            } catch (err) {
+                errorMsg.textContent = err.message;
+                errorDiv.classList.add('show');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> Login to Admin Panel';
+            }
+        });
+    });
+    </script>
+</body>
+</html>
+
+
+
+
+

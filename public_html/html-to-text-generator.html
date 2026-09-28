@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free HTML to Text Converter | SEO Error Auditor</title>
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Convert HTML markup to clean plain text instantly. Free HTML to text converter.">
+    <meta name="keywords" content="html to text converter, strip html tags online, remove html formatting, html to plain text, html code to text free">
+    <link rel="canonical" href="https://seoerrorauditor.com/tools/html-to-text">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoerrorauditor.com/tools/html-to-text">
+    <meta property="og:title" content="Free HTML to Text Converter | SEO Error Auditor">
+    <meta property="og:description" content="Convert HTML markup to clean plain text instantly. Free HTML to text converter tool.">
+    <meta property="og:site_name" content="SEO Error Auditor">
+    <meta property="og:image" content="https://seoerrorauditor.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free HTML to Text Converter | SEO Error Auditor">
+    <meta name="twitter:description" content="Convert HTML markup to clean plain text instantly. Free HTML to text converter tool.">
+    <meta name="twitter:image" content="https://seoerrorauditor.com/logo.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "HTML to Text Converter",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+
+    <!-- Background Glow Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                
+                <div class="nav-dropdown" id="navDropdownTools">
+                    <button class="nav-item dropdown-toggle" id="dropdownToggleBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" id="toolsDropdownMenu" role="menu" aria-label="Free SEO Tools">
+                        <a href="/tools/sitemap-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item" role="menuitem"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item" role="menuitem"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                
+                <div class="nav-actions-mobile">
+                    <button id="themeToggleBtnMobile" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                    <a href="/tools/sitemap-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+                </div>
+            </nav>
+            
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                <a href="/tools/sitemap-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout container">
+        
+        <!-- Hero Section -->
+        <section class="tool-hero" style="padding:3rem 0 2rem;">
+            <div class="container text-center">
+                <span class="badge badge-glow" style="margin-bottom:1rem;">Content Tools</span>
+                <h1 class="hero-title" style="font-size:2.8rem;margin-bottom:1rem;">Free <span>HTML to Text</span> Converter</h1>
+                <p class="hero-subtitle-top" style="max-width:720px;margin:0 auto 2rem;">Paste any HTML code and instantly extract clean, readable plain text. Strips all tags, preserves line breaks, and delivers human-readable content in seconds.</p>
+            </div>
+        </section>
+
+        <!-- Tool Interface -->
+        <div style="max-width:1100px;margin:0 auto 2rem;">
+<p class="hero-subtitle">Strip HTML tags, extract readable copy, and calculate word counts without breaking paragraphs.</p>
+
+<div class="tool-card" style="max-width:1100px;margin:2rem auto;padding:2rem;text-align:left;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- HTML Input -->
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <h3 style="font-size:1.15rem;margin:0;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+          <i class="fa-solid fa-code" style="color:var(--accent-cyan);"></i> Raw HTML Input
+        </h3>
+        <button id="h2tSampleBtn" class="btn btn-sm btn-outline">Load Sample</button>
+      </div>
+
+      <textarea id="h2tInput" rows="12" class="form-control" placeholder="Paste your HTML markup here..." style="width:100%;font-family:monospace;font-size:0.85rem;resize:vertical;"></textarea>
+      
+      <div style="margin-top:12px;display:flex;gap:15px;flex-wrap:wrap;font-size:0.85rem;color:var(--muted-foreground);">
+        <label style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;">
+          <input type="checkbox" id="h2tPreserveLines" checked> Preserve Paragraph Breaks
+        </label>
+        <label style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;">
+          <input type="checkbox" id="h2tStripExtraSpaces" checked> Trim Extra Spaces
+        </label>
+      </div>
+    </div>
+
+    <!-- Plain Text Output -->
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <h3 style="font-size:1.15rem;margin:0;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+          <i class="fa-solid fa-align-left" style="color:var(--accent-indigo);"></i> Plain Text Output
+        </h3>
+        <span id="h2tStats" style="font-size:0.82rem;color:var(--accent-cyan);font-weight:600;">0 words | 0 chars</span>
+      </div>
+
+      <div style="position:relative;">
+        <textarea id="h2tOutput" rows="12" class="form-control" readonly style="width:100%;font-size:0.9rem;resize:vertical;line-height:1.6;"></textarea>
+        <button id="h2tCopyBtn" class="btn btn-sm btn-primary" style="position:absolute;top:10px;right:10px;">
+          <i class="fa-solid fa-copy"></i> Copy Text
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section container" style="max-width:1100px;margin:0 auto;">
+
+        <!-- How to Use -->
+        <div class="how-it-works-section">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:8px;">How to Use This Tool</h2>
+            <p style="color:var(--muted-foreground);font-size:1rem;margin-bottom:0;">Three simple steps to get your result in seconds.</p>
+            <div class="steps-grid">
+            <div class="step-card glass-card text-center">
+                <div class="step-num">01</div>
+                <div class="step-icon"><i class="fa-solid fa-paste"></i></div>
+                <h3>Paste Your HTML Code</h3>
+                <p>Copy any HTML source code — a full page, a snippet, an email template — and paste it into the input field.</p>
+            </div>
+            <div class="step-card glass-card text-center">
+                <div class="step-num">02</div>
+                <div class="step-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Instant Conversion</h3>
+                <p>The tool instantly processes your HTML and strips all tags, scripts, styles and invisible elements.</p>
+            </div>
+            <div class="step-card glass-card text-center">
+                <div class="step-num">03</div>
+                <div class="step-icon"><i class="fa-solid fa-copy"></i></div>
+                <h3>Copy Plain Text</h3>
+                <p>Copy the clean plain text output to use in emails, documents, CMS content fields, or SEO audits.</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Benefits / Features -->
+        <div style="margin-top:60px;margin-bottom:60px;">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:8px;">Why Use Our Tool?</h2>
+            <p style="color:var(--muted-foreground);font-size:1rem;margin-bottom:2rem;">Built for SEO professionals, developers, and content creators.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+                
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-file-lines" style="color:#6366f1;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Clean Text Extraction</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Perfectly removes all HTML markup while preserving the actual readable content and logical paragraph structure.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-envelope" style="color:#10b981;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Email Template Parsing</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Quickly extract plain text versions of HTML emails for email clients that don't render HTML.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-magnifying-glass-chart" style="color:#f59e0b;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">SEO Content Audits</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Extract visible text from page source code to quickly audit content, check keyword density, or detect thin content.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-bolt" style="color:#06b6d4;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">100% Client-Side</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">All processing happens in your browser. No HTML is sent to any server — your data stays completely private.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="glass-card" style="padding:2.5rem;margin-top:60px;margin-bottom:60px;">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:1.5rem;">
+                <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:10px;"></i>Frequently Asked Questions
+            </h2>
+            
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>What does HTML to Text conversion do?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">It removes all HTML tags (&lt;p&gt;, &lt;div&gt;, &lt;span&gt;, etc.) and returns only the visible text content, similar to what you'd see in a web browser.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Will it preserve line breaks and paragraphs?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">Yes! Block-level elements like &lt;p&gt;, &lt;br&gt;, &lt;h1&gt;-&lt;h6&gt;, and &lt;li&gt; are converted to proper newlines in the output text.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Can I use this to extract email newsletter text?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">Absolutely! This is one of the most common use cases — extracting the plain text version of HTML email templates for fallback email clients.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Does this tool handle malformed HTML?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">Yes, the converter uses a robust parsing approach that handles incomplete or malformed HTML gracefully without breaking or erroring out.</p>
+                    </div>
+        </div>
+
+    </section>
+
+    </main>
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Word Counter",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoerrorauditor.com/">
+    <meta property="og:title" content="Free SEO Tools Online 2026">
+    <meta property="og:description" content="Use free SEO tools online at SEO Error Auditor.">
+    <meta property="og:image" content="https://seoerrorauditor.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://seoerrorauditor.com/logo.png">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+
+    <!-- Background Glow Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header Navigation -->
+        <!-- Header Navigation -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                
+                <div class="nav-dropdown" id="navDropdownTools">
+                    <button class="nav-item dropdown-toggle" id="dropdownToggleBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" id="toolsDropdownMenu" role="menu" aria-label="Free SEO Tools">
+                        
+                        
+                        
+                        <a href="/tools/sitemap-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item" role="menuitem"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item" role="menuitem"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                
+                <div class="nav-actions-mobile">
+                    <button id="themeToggleBtnMobile" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                    <a href="/tools/keyword-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+                </div>
+            </nav>
+            
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                <a href="/tools/keyword-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout container">
+        
+        <!-- Hero Section -->
+        <section class="hero-section text-center tool-hero my-4">
+            
+<p class="hero-subtitle">Strip HTML tags, extract readable copy, and calculate word counts without breaking paragraphs.</p>
+
+<div class="tool-card" style="max-width:1100px;margin:2rem auto;padding:2rem;text-align:left;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- HTML Input -->
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <h3 style="font-size:1.15rem;margin:0;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+          <i class="fa-solid fa-code" style="color:var(--accent-cyan);"></i> Raw HTML Input
+        </h3>
+        <button id="h2tSampleBtn" class="btn btn-sm btn-outline">Load Sample</button>
+      </div>
+
+      <textarea id="h2tInput" rows="12" class="form-control" placeholder="Paste your HTML markup here..." style="width:100%;font-family:monospace;font-size:0.85rem;resize:vertical;"></textarea>
+      
+      <div style="margin-top:12px;display:flex;gap:15px;flex-wrap:wrap;font-size:0.85rem;color:var(--muted-foreground);">
+        <label style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;">
+          <input type="checkbox" id="h2tPreserveLines" checked> Preserve Paragraph Breaks
+        </label>
+        <label style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;">
+          <input type="checkbox" id="h2tStripExtraSpaces" checked> Trim Extra Spaces
+        </label>
+      </div>
+    </div>
+
+    <!-- Plain Text Output -->
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <h3 style="font-size:1.15rem;margin:0;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+          <i class="fa-solid fa-align-left" style="color:var(--accent-indigo);"></i> Plain Text Output
+        </h3>
+        <span id="h2tStats" style="font-size:0.82rem;color:var(--accent-cyan);font-weight:600;">0 words | 0 chars</span>
+      </div>
+
+      <div style="position:relative;">
+        <textarea id="h2tOutput" rows="12" class="form-control" readonly style="width:100%;font-size:0.9rem;resize:vertical;line-height:1.6;"></textarea>
+        <button id="h2tCopyBtn" class="btn btn-sm btn-primary" style="position:absolute;top:10px;right:10px;">
+          <i class="fa-solid fa-copy"></i> Copy Text
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </section>
+        
+        
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('h2tInput');
+  const output = document.getElementById('h2tOutput');
+  const stats = document.getElementById('h2tStats');
+  const copyBtn = document.getElementById('h2tCopyBtn');
+  const sampleBtn = document.getElementById('h2tSampleBtn');
+  const preserveLines = document.getElementById('h2tPreserveLines');
+  const stripSpaces = document.getElementById('h2tStripExtraSpaces');
+
+  function convert() {
+    let html = input.value;
+    if (!html.trim()) {
+      output.value = '';
+      stats.textContent = '0 words | 0 chars';
+      return;
+    }
+
+    if (preserveLines.checked) {
+      html = html.replace(/<\/(p|div|h[1-6]|li|tr|section|article)>/gi, '\n\n');
+      html = html.replace(/<br\s*\/?>/gi, '\n');
+    }
+
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+    let txt = temp.textContent || temp.innerText || '';
+
+    if (stripSpaces.checked) {
+      txt = txt.replace(/[ \t]+/g, ' ').replace(/\n\s*\n\s*\n/g, '\n\n').trim();
+    }
+
+    output.value = txt;
+
+    const words = txt.trim() ? txt.trim().split(/\s+/).length : 0;
+    stats.textContent = `${words} words | ${txt.length} chars`;
+  }
+
+  input.addEventListener('input', convert);
+  preserveLines.addEventListener('change', convert);
+  stripSpaces.addEventListener('change', convert);
+
+  sampleBtn.addEventListener('click', () => {
+    input.value = `<article>\n  <h1>Understanding Core Web Vitals</h1>\n  <p>Core Web Vitals are a set of <strong>specific metrics</strong> that Google considers critical in a webpage's overall user experience.</p>\n  <ul>\n    <li><strong>LCP:</strong> Largest Contentful Paint (Loading Speed)</li>\n    <li><strong>INP:</strong> Interaction to Next Paint (Responsiveness)</li>\n    <li><strong>CLS:</strong> Cumulative Layout Shift (Visual Stability)</li>\n  </ul>\n  <p>Optimizing these factors can significantly boost your <a href="https://example.com">search visibility</a>.</p>\n</article>`;
+    convert();
+  });
+
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(output.value).then(() => {
+      copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      setTimeout(() => { copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Text'; }, 2000);
+    });
+  });
+});
+</script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand-col">
+                <a href="/" class="brand footer-brand">
+                    <img src="/footer-logo.png" alt="SEO Error Auditor" class="footer-logo-img">
+                </a>
+                <p class="footer-desc">Free technical SEO tools for webmasters, marketers & SEO agencies. No sign-up required.</p>
+                <div class="footer-socials">
+                    <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> 100% Free &amp; Secure</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Free SEO Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="/tools/sitemap-generator">XML Sitemap Generator</a></li>
+                    <li><a href="/tools/schema-generator">JSON-LD Schema Builder</a></li>
+                    <li><a href="/tools/meta-tag-generator">Meta Tags Generator</a></li>
+                    <li><a href="/tools/og-graph-generator">Open Graph Generator</a></li>
+                    <li><a href="/tools/robots-txt-generator">Robots.txt Generator</a></li>
+                    <li><a href="/tools/llms-txt-generator">LLMs.txt Generator</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="/blog">SEO Guides &amp; Tutorials</a></li>
+                    <li><a href="/blog/complete-technical-seo-audit-checklist-2026">Technical SEO Checklist 2026</a></li>
+                    <li><a href="/blog/how-to-fix-404-broken-links-guide">404 Error Fix Guide</a></li>
+                    <li><a href="/#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company &amp; Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom text-center">
+            <p>&copy; 2026 SEO Error Auditor (seoerrorauditor.com). All rights reserved.</p>
+        </div>
+    </footer>
+<script src="/config.js"></script>
+<script src="/app.js?v=13"></script>
+
+            <!-- Enquiry Popup -->
+    <div id="enquiryPopupOverlay" class="popup-overlay">
+        <div class="popup-modal">
+            <button class="popup-close" id="popupCloseBtn" aria-label="Close">&times;</button>
+
+            <div class="popup-header">
+                <div class="popup-header-icon">&#128640;</div>
+                <h3>Need Help With Your Project?</h3>
+                <p>Tell us a few details &amp; our expert team will get in touch with you shortly.</p>
+            </div>
+
+            <div class="popup-body">
+                <form id="enquiryFormPopup" autocomplete="off">
+                    <div class="popup-field">
+                        <label for="popupName">Full Name</label>
+                        <div class="popup-input-wrap">
+                            <input type="text" id="popupName" placeholder="Enter your full name" required minlength="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                    </div>
+                    <div class="popup-field">
+                        <label for="popupEmail">Email Address</label>
+                        <div class="popup-input-wrap">
+                            <input type="email" id="popupEmail" placeholder="Enter your email" required>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="popup-field">
+                        <label for="popupMobile">Mobile Number</label>
+                        <div class="popup-input-wrap">
+                            <input type="tel" id="popupMobile" placeholder="Enter your mobile number" pattern="[\+]?[0-9]{10,13}" required>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                    </div>
+                    <button type="submit" class="popup-submit-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Send Enquiry
+                    </button>
+                    <div id="popupFormMessage" class="popup-form-msg"></div>
+                </form>
+                <div class="popup-trust">
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> 100% Secure</span>
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> No Spam Ever</span>
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Quick Response</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

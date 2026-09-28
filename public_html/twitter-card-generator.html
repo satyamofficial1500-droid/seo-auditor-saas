@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Twitter / X Card Generator | SEO Error Auditor</title>
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Generate Twitter/X card meta tags with live preview. Free twitter card meta tag generator.">
+    <meta name="keywords" content="twitter card generator, twitter meta tags, x card generator, twitter summary card, twitter large image card">
+    <link rel="canonical" href="https://seoerrorauditor.com/tools/twitter-card-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoerrorauditor.com/tools/twitter-card-generator">
+    <meta property="og:title" content="Free Twitter Card Generator — X Summary Card Preview | SEO Error Auditor">
+    <meta property="og:description" content="Generate Twitter/X card meta tags with live preview. Free twitter card generator tool.">
+    <meta property="og:site_name" content="SEO Error Auditor">
+    <meta property="og:image" content="https://seoerrorauditor.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Twitter Card Generator — X Summary Card Preview | SEO Error Auditor">
+    <meta name="twitter:description" content="Generate Twitter/X card meta tags with live preview. Free twitter card generator tool.">
+    <meta name="twitter:image" content="https://seoerrorauditor.com/logo.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Twitter Card Generator",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+
+    <!-- Background Glow Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                
+                <div class="nav-dropdown" id="navDropdownTools">
+                    <button class="nav-item dropdown-toggle" id="dropdownToggleBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" id="toolsDropdownMenu" role="menu" aria-label="Free SEO Tools">
+                        <a href="/tools/sitemap-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item" role="menuitem"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item" role="menuitem"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                
+                <div class="nav-actions-mobile">
+                    <button id="themeToggleBtnMobile" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                    <a href="/tools/sitemap-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+                </div>
+            </nav>
+            
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                <a href="/tools/sitemap-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout container">
+        
+        <!-- Hero Section -->
+        <section class="tool-hero" style="padding:3rem 0 2rem;">
+            <div class="container text-center">
+                <span class="badge badge-glow" style="margin-bottom:1rem;">Twitter / X SEO</span>
+                <h1 class="hero-title" style="font-size:2.8rem;margin-bottom:1rem;">Free <span>Twitter Card</span> Generator</h1>
+                <p class="hero-subtitle-top" style="max-width:720px;margin:0 auto 2rem;">Generate correct Twitter Card meta tags (twitter:card, twitter:title, twitter:image) for your website. Control exactly how your content appears when shared on X (Twitter).</p>
+            </div>
+        </section>
+
+        <!-- Tool Interface -->
+        <div style="max-width:1100px;margin:0 auto 2rem;">
+<p class="hero-subtitle">Make your content stand out on X / Twitter feeds with eye-catching large image summary cards.</p>
+
+<div class="tool-card" style="max-width:1100px;margin:2rem auto;padding:2rem;text-align:left;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- Inputs -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-brands fa-x-twitter" style="color:var(--accent-cyan);"></i> Twitter Card Details
+      </h3>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Card Format</label>
+        <select id="twType" class="form-control" style="width:100%;">
+          <option value="summary_large_image" selected>summary_large_image (Large Hero Card - Recommended)</option>
+          <option value="summary">summary (Small Square Image)</option>
+        </select>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Card Title *</label>
+        <input type="text" id="twTitle" class="form-control" value="Top 15 Free SEO Audit Tools for Developers" style="width:100%;">
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Card Description *</label>
+        <textarea id="twDesc" rows="3" class="form-control" style="width:100%;">Discover high-speed SEO diagnostics tools with live code analyzers, robots testing, and XML validation.</textarea>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Card Image URL (1200x628px)</label>
+        <input type="url" id="twImage" class="form-control" value="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=628&fit=crop" style="width:100%;">
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;" class="mb-3">
+        <div>
+          <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Site @handle</label>
+          <input type="text" id="twSite" class="form-control" value="@SeoErrorAuditor" style="width:100%;">
+        </div>
+        <div>
+          <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Creator @handle</label>
+          <input type="text" id="twCreator" class="form-control" value="@AuthorHandle" style="width:100%;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Preview & Code -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-mobile-screen" style="color:var(--accent-indigo);"></i> Live X Feed Preview
+      </h3>
+
+      <!-- Twitter card preview container -->
+      <div style="background:#0f172a;border:1px solid rgba(255,255,255,0.15);border-radius:16px;overflow:hidden;margin-bottom:1.5rem;box-shadow:0 12px 30px rgba(0,0,0,0.4);">
+        <div id="twCardImgBox" style="height:200px;background:#1e293b;overflow:hidden;">
+          <img id="twPrevImg" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=628&fit=crop" style="width:100%;height:100%;object-fit:cover;" alt="Twitter Card Preview">
+        </div>
+        <div style="padding:1rem;">
+          <div style="font-size:0.78rem;color:#94a3b8;margin-bottom:4px;">example.com</div>
+          <div id="twPrevTitle" style="font-size:1.05rem;font-weight:700;color:#f8fafc;margin-bottom:6px;line-height:1.3;">Top 15 Free SEO Audit Tools for Developers</div>
+          <div id="twPrevDesc" style="font-size:0.85rem;color:#94a3b8;line-height:1.4;">Discover high-speed SEO diagnostics tools with live code analyzers, robots testing, and XML validation.</div>
+        </div>
+      </div>
+
+      <!-- Generated Tags -->
+      <div style="position:relative;">
+        <pre id="twOutput" style="background:var(--muted);border:1px solid var(--border);border-radius:12px;padding:1.2rem;font-family:monospace;font-size:0.85rem;color:var(--foreground);overflow-x:auto;white-space:pre-wrap;min-height:160px;line-height:1.5;"></pre>
+        <button id="twCopyBtn" class="btn btn-sm btn-primary" style="position:absolute;top:10px;right:10px;">
+          <i class="fa-solid fa-copy"></i> Copy Twitter Tags
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section container" style="max-width:1100px;margin:0 auto;">
+
+        <!-- How to Use -->
+        <div class="how-it-works-section">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:8px;">How to Use This Tool</h2>
+            <p style="color:var(--muted-foreground);font-size:1rem;margin-bottom:0;">Three simple steps to get your result in seconds.</p>
+            <div class="steps-grid">
+            <div class="step-card glass-card text-center">
+                <div class="step-num">01</div>
+                <div class="step-icon"><i class="fa-solid fa-file-lines"></i></div>
+                <h3>Choose Card Type</h3>
+                <p>Select between Summary Card (small thumbnail) or Summary Large Image Card (full-width banner image).</p>
+            </div>
+            <div class="step-card glass-card text-center">
+                <div class="step-num">02</div>
+                <div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                <h3>Fill in Your Details</h3>
+                <p>Enter your page title, description, creator handle, and image URL for the Twitter card preview.</p>
+            </div>
+            <div class="step-card glass-card text-center">
+                <div class="step-num">03</div>
+                <div class="step-icon"><i class="fa-solid fa-copy"></i></div>
+                <h3>Copy & Deploy</h3>
+                <p>Copy the generated twitter: meta tags and add them to your HTML page's &lt;head&gt; section.</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Benefits / Features -->
+        <div style="margin-top:60px;margin-bottom:60px;">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:8px;">Why Use Our Tool?</h2>
+            <p style="color:var(--muted-foreground);font-size:1rem;margin-bottom:2rem;">Built for SEO professionals, developers, and content creators.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+                
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-x-twitter" style="color:#000000;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">X (Twitter) Optimized</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Twitter Card tags ensure your shared links display as rich cards with image, title and description instead of plain text URLs.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-image" style="color:#1da1f2;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Large Image Cards</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Summary Large Image cards create stunning full-width previews that dramatically increase engagement and retweet rates.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-chart-line" style="color:#10b981;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">3x More Engagement</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Tweets with properly configured card images receive significantly higher engagement, clicks, and shares than plain text tweets.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-at" style="color:#6366f1;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Creator Attribution</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Add your twitter:creator handle to attribute content to your account, building your brand authority on X.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="glass-card" style="padding:2.5rem;margin-top:60px;margin-bottom:60px;">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:1.5rem;">
+                <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:10px;"></i>Frequently Asked Questions
+            </h2>
+            
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>What is a Twitter Card?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">A Twitter Card is a rich preview that appears when someone shares your URL on X (Twitter). It shows an image, title, and description instead of just a plain link.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>What's the difference between Summary and Summary Large Image?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">Summary shows a small square thumbnail. Summary Large Image shows a large banner-style image (2:1 ratio, minimum 300×157px recommended 1200×628px).</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Do Twitter Card tags overlap with Open Graph tags?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">Yes, both serve similar purposes but for different platforms. Many tags can share values — it's best to include both sets for maximum social media coverage.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>How do I validate my Twitter Card?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">Use the X (Twitter) Card Validator at cards-dev.twitter.com/validator to preview and validate your card tags before publishing.</p>
+                    </div>
+        </div>
+
+    </section>
+
+    </main>
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Word Counter",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoerrorauditor.com/">
+    <meta property="og:title" content="Free SEO Tools Online 2026">
+    <meta property="og:description" content="Use free SEO tools online at SEO Error Auditor.">
+    <meta property="og:image" content="https://seoerrorauditor.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://seoerrorauditor.com/logo.png">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+
+    <!-- Background Glow Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header Navigation -->
+        <!-- Header Navigation -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                
+                <div class="nav-dropdown" id="navDropdownTools">
+                    <button class="nav-item dropdown-toggle" id="dropdownToggleBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" id="toolsDropdownMenu" role="menu" aria-label="Free SEO Tools">
+                        
+                        
+                        
+                        <a href="/tools/sitemap-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item" role="menuitem"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item" role="menuitem"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                
+                <div class="nav-actions-mobile">
+                    <button id="themeToggleBtnMobile" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                    <a href="/tools/keyword-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+                </div>
+            </nav>
+            
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                <a href="/tools/keyword-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout container">
+        
+        <!-- Hero Section -->
+        <section class="hero-section text-center tool-hero my-4">
+            
+<p class="hero-subtitle">Make your content stand out on X / Twitter feeds with eye-catching large image summary cards.</p>
+
+<div class="tool-card" style="max-width:1100px;margin:2rem auto;padding:2rem;text-align:left;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- Inputs -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-brands fa-x-twitter" style="color:var(--accent-cyan);"></i> Twitter Card Details
+      </h3>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Card Format</label>
+        <select id="twType" class="form-control" style="width:100%;">
+          <option value="summary_large_image" selected>summary_large_image (Large Hero Card - Recommended)</option>
+          <option value="summary">summary (Small Square Image)</option>
+        </select>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Card Title *</label>
+        <input type="text" id="twTitle" class="form-control" value="Top 15 Free SEO Audit Tools for Developers" style="width:100%;">
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Card Description *</label>
+        <textarea id="twDesc" rows="3" class="form-control" style="width:100%;">Discover high-speed SEO diagnostics tools with live code analyzers, robots testing, and XML validation.</textarea>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Card Image URL (1200x628px)</label>
+        <input type="url" id="twImage" class="form-control" value="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=628&fit=crop" style="width:100%;">
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;" class="mb-3">
+        <div>
+          <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Site @handle</label>
+          <input type="text" id="twSite" class="form-control" value="@SeoErrorAuditor" style="width:100%;">
+        </div>
+        <div>
+          <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:4px;">Creator @handle</label>
+          <input type="text" id="twCreator" class="form-control" value="@AuthorHandle" style="width:100%;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Preview & Code -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-mobile-screen" style="color:var(--accent-indigo);"></i> Live X Feed Preview
+      </h3>
+
+      <!-- Twitter card preview container -->
+      <div style="background:#0f172a;border:1px solid rgba(255,255,255,0.15);border-radius:16px;overflow:hidden;margin-bottom:1.5rem;box-shadow:0 12px 30px rgba(0,0,0,0.4);">
+        <div id="twCardImgBox" style="height:200px;background:#1e293b;overflow:hidden;">
+          <img id="twPrevImg" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=628&fit=crop" style="width:100%;height:100%;object-fit:cover;" alt="Twitter Card Preview">
+        </div>
+        <div style="padding:1rem;">
+          <div style="font-size:0.78rem;color:#94a3b8;margin-bottom:4px;">example.com</div>
+          <div id="twPrevTitle" style="font-size:1.05rem;font-weight:700;color:#f8fafc;margin-bottom:6px;line-height:1.3;">Top 15 Free SEO Audit Tools for Developers</div>
+          <div id="twPrevDesc" style="font-size:0.85rem;color:#94a3b8;line-height:1.4;">Discover high-speed SEO diagnostics tools with live code analyzers, robots testing, and XML validation.</div>
+        </div>
+      </div>
+
+      <!-- Generated Tags -->
+      <div style="position:relative;">
+        <pre id="twOutput" style="background:var(--muted);border:1px solid var(--border);border-radius:12px;padding:1.2rem;font-family:monospace;font-size:0.85rem;color:var(--foreground);overflow-x:auto;white-space:pre-wrap;min-height:160px;line-height:1.5;"></pre>
+        <button id="twCopyBtn" class="btn btn-sm btn-primary" style="position:absolute;top:10px;right:10px;">
+          <i class="fa-solid fa-copy"></i> Copy Twitter Tags
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </section>
+        
+        
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const type = document.getElementById('twType');
+  const title = document.getElementById('twTitle');
+  const desc = document.getElementById('twDesc');
+  const img = document.getElementById('twImage');
+  const site = document.getElementById('twSite');
+  const creator = document.getElementById('twCreator');
+
+  const prevImg = document.getElementById('twPrevImg');
+  const prevTitle = document.getElementById('twPrevTitle');
+  const prevDesc = document.getElementById('twPrevDesc');
+  const output = document.getElementById('twOutput');
+  const copyBtn = document.getElementById('twCopyBtn');
+
+  function update() {
+    const tp = type.value;
+    const t = title.value.trim();
+    const d = desc.value.trim();
+    const im = img.value.trim();
+    const s = site.value.trim();
+    const c = creator.value.trim();
+
+    prevTitle.textContent = t || 'Card Title';
+    prevDesc.textContent = d || 'Card Description';
+    prevImg.src = im || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" fill="%23334155"><rect width="100%" height="100%"/></svg>';
+
+    let tags = `<!-- Twitter / X -->\n`;
+    tags += `<meta name="twitter:card" content="${tp}">\n`;
+    if (s) tags += `<meta name="twitter:site" content="${s}">\n`;
+    if (c) tags += `<meta name="twitter:creator" content="${c}">\n`;
+    if (t) tags += `<meta name="twitter:title" content="${t}">\n`;
+    if (d) tags += `<meta name="twitter:description" content="${d}">\n`;
+    if (im) tags += `<meta name="twitter:image" content="${im}">\n`;
+
+    output.textContent = tags;
+  }
+
+  [type, title, desc, img, site, creator].forEach(el => {
+    el.addEventListener('input', update);
+    el.addEventListener('change', update);
+  });
+
+  update();
+
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(output.textContent).then(() => {
+      copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      setTimeout(() => { copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Twitter Tags'; }, 2000);
+    });
+  });
+});
+</script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand-col">
+                <a href="/" class="brand footer-brand">
+                    <img src="/footer-logo.png" alt="SEO Error Auditor" class="footer-logo-img">
+                </a>
+                <p class="footer-desc">Free technical SEO tools for webmasters, marketers & SEO agencies. No sign-up required.</p>
+                <div class="footer-socials">
+                    <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> 100% Free &amp; Secure</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Free SEO Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="/tools/sitemap-generator">XML Sitemap Generator</a></li>
+                    <li><a href="/tools/schema-generator">JSON-LD Schema Builder</a></li>
+                    <li><a href="/tools/meta-tag-generator">Meta Tags Generator</a></li>
+                    <li><a href="/tools/og-graph-generator">Open Graph Generator</a></li>
+                    <li><a href="/tools/robots-txt-generator">Robots.txt Generator</a></li>
+                    <li><a href="/tools/llms-txt-generator">LLMs.txt Generator</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="/blog">SEO Guides &amp; Tutorials</a></li>
+                    <li><a href="/blog/complete-technical-seo-audit-checklist-2026">Technical SEO Checklist 2026</a></li>
+                    <li><a href="/blog/how-to-fix-404-broken-links-guide">404 Error Fix Guide</a></li>
+                    <li><a href="/#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company &amp; Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom text-center">
+            <p>&copy; 2026 SEO Error Auditor (seoerrorauditor.com). All rights reserved.</p>
+        </div>
+    </footer>
+<script src="/config.js"></script>
+<script src="/app.js?v=13"></script>
+
+            <!-- Enquiry Popup -->
+    <div id="enquiryPopupOverlay" class="popup-overlay">
+        <div class="popup-modal">
+            <button class="popup-close" id="popupCloseBtn" aria-label="Close">&times;</button>
+
+            <div class="popup-header">
+                <div class="popup-header-icon">&#128640;</div>
+                <h3>Need Help With Your Project?</h3>
+                <p>Tell us a few details &amp; our expert team will get in touch with you shortly.</p>
+            </div>
+
+            <div class="popup-body">
+                <form id="enquiryFormPopup" autocomplete="off">
+                    <div class="popup-field">
+                        <label for="popupName">Full Name</label>
+                        <div class="popup-input-wrap">
+                            <input type="text" id="popupName" placeholder="Enter your full name" required minlength="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                    </div>
+                    <div class="popup-field">
+                        <label for="popupEmail">Email Address</label>
+                        <div class="popup-input-wrap">
+                            <input type="email" id="popupEmail" placeholder="Enter your email" required>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="popup-field">
+                        <label for="popupMobile">Mobile Number</label>
+                        <div class="popup-input-wrap">
+                            <input type="tel" id="popupMobile" placeholder="Enter your mobile number" pattern="[\+]?[0-9]{10,13}" required>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                    </div>
+                    <button type="submit" class="popup-submit-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Send Enquiry
+                    </button>
+                    <div id="popupFormMessage" class="popup-form-msg"></div>
+                </form>
+                <div class="popup-trust">
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> 100% Secure</span>
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> No Spam Ever</span>
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Quick Response</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

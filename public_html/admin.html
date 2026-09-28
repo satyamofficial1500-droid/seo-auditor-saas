@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin CMS | SEO Error Auditor</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- TinyMCE Rich Text Editor -->
+    <script src="https://cdn.tiny.cloud/1/270lajl1vgse6i6d3sk6c0zf8729fjj50gwrw1x8exemeps6/tinymce/8/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="/style.css?v=13">
+    <style>
+        .admin-tabs { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+        .admin-tab { background: var(--input); border: 1px solid var(--border); color: var(--muted-foreground); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+        .admin-tab.active { background: rgba(56,189,248,0.15); border-color: #38bdf8; color: #38bdf8; }
+        .admin-tab:hover { background: var(--hover-overlay); color: var(--foreground); }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        /* TinyMCE Adjustments */
+        .tox-tinymce { border-radius: 10px !important; border-color: var(--border) !important; }
+        .tox .tox-mbtn, .tox .tox-tbtn { color: var(--foreground) !important; }
+        .tox .tox-tbtn--enabled, .tox .tox-tbtn--enabled:hover { background: rgba(56,189,248,0.2) !important; color: #38bdf8 !important; }
+
+        .status-draft  { background: rgba(245,158,11,0.2); color: #fbbf24; border: 1px solid rgba(245,158,11,0.4); padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; }
+        .status-published { background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4); padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; }
+        
+        .edit-modal-backdrop { position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9998; display:none; }
+        .edit-modal-backdrop.show { display:flex; align-items:center; justify-content:center; }
+        .edit-modal { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 2rem; width: 92%; max-width: 900px; max-height: 90vh; overflow-y: auto; z-index: 9999; }
+        .edit-modal h3 { font-family: 'Outfit', sans-serif; font-size:1.3rem; margin-bottom:1.5rem; color:var(--accent-cyan); }
+        
+        .seo-fields-section { border-top: 1px solid var(--border); margin-top: 1.5rem; padding-top: 1.5rem; }
+        .seo-fields-label { color: var(--accent-indigo); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; }
+        
+        .enquiry-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 15px; margin-bottom: 15px; }
+        .enquiry-header { display: flex; justify-content: space-between; margin-bottom: 10px; color: var(--muted-foreground); font-size: 0.9rem; }
+        .enquiry-subject { font-size: 1.1rem; color: var(--foreground); font-weight: 600; margin-bottom: 10px; }
+        .enquiry-message { color: var(--foreground); white-space: pre-wrap; font-size: 0.95rem; background: var(--input); padding: 10px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <!-- Auth Guard Overlay -->
+    <div id="authCheckOverlay" style="position:fixed;inset:0;background:#0f172a;z-index:99999;display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center; color:#94a3b8;"><i class="fa-solid fa-circle-notch fa-spin fa-2x"></i><p style="margin-top:1rem;">Verifying access...</p></div>
+    </div>
+
+    <!-- Toast -->
+    <div id="adminToast" class="admin-toast hidden"></div>
+
+    <!-- Edit Modal -->
+    <div class="edit-modal-backdrop" id="editModalBackdrop">
+        <div class="edit-modal">
+            <h3><i class="fa-solid fa-pen-to-square"></i> Edit Article</h3>
+            <div class="form-group mb-3">
+                <label class="form-label">Article Title *</label>
+                <input type="text" id="editTitle" class="form-control" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group flex-1">
+                    <label class="form-label">Category</label>
+                    <select id="editCategory" class="form-control">
+                        <option value="Technical SEO">Technical SEO</option>
+                        <option value="On-Page SEO">On-Page SEO</option>
+                        <option value="SEO Strategy">SEO Strategy</option>
+                        <option value="Link Building">Link Building</option>
+                        <option value="Google Algorithm">Google Algorithm</option>
+                    </select>
+                </div>
+                <div class="form-group flex-1">
+                    <label class="form-label">Status</label>
+                    <select id="editStatus" class="form-control">
+                        <option value="published">Published</option>
+                        <option value="draft">Draft</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group flex-1">
+                    <label class="form-label">Author</label>
+                    <input type="text" id="editAuthor" class="form-control">
+                </div>
+                <div class="form-group flex-1">
+                    <label class="form-label">Read Time</label>
+                    <input type="text" id="editReadTime" class="form-control">
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label class="form-label">Short Summary *</label>
+                <textarea id="editSummary" class="form-control" rows="2" required></textarea>
+            </div>
+            <div class="form-group mb-3">
+                <label class="form-label">Featured Image URL</label>
+                <div style="display:flex; gap:10px;">
+                    <input type="url" id="editFeaturedImage" class="form-control" placeholder="https://..." style="flex:1;">
+                    <input type="file" id="editFeaturedImageFile" accept="image/*" style="display:none;" onchange="uploadFeaturedImage(this, 'editFeaturedImage')">
+                    <button type="button" class="btn btn-outline" onclick="document.getElementById('editFeaturedImageFile').click()" title="Upload Image"><i class="fa-solid fa-upload"></i></button>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label class="form-label">Article Content *</label>
+                <!-- TinyMCE textarea -->
+                <textarea id="editContentEditor"></textarea>
+            </div>
+
+            <div class="seo-fields-section">
+                <p class="seo-fields-label"><i class="fa-solid fa-magnifying-glass"></i> SEO Fields</p>
+                <div class="form-group mb-3">
+                    <label class="form-label">SEO Title (55-60 chars)</label>
+                    <input type="text" id="editSeoTitle" class="form-control" maxlength="70">
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label">SEO Meta Description (150-160 chars)</label>
+                    <textarea id="editSeoDesc" class="form-control" rows="2" maxlength="170"></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label">JSON-LD Schema Markup</label>
+                    <textarea id="editSchema" class="form-control" rows="4" placeholder='<script type="application/ld+json">...</script>'></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label">Tags (comma separated)</label>
+                    <input type="text" id="editTags" class="form-control" placeholder="seo, technical, 2026">
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label">Canonical URL</label>
+                    <input type="url" id="editCanonical" class="form-control" placeholder="https://seoerrorauditor.com/blog/...">
+                </div>
+            </div>
+
+            <div class="form-actions mt-4 flex gap-3">
+                <button id="editSaveBtn" class="btn btn-emerald btn-glow flex-1"><i class="fa-solid fa-check"></i> Save Changes</button>
+                <button onclick="closeEditModal()" class="btn btn-outline flex-1"><i class="fa-solid fa-xmark"></i> Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="brand">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img">
+            </a>
+            <nav class="nav-links">
+                <a href="/" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-item dropdown-toggle"><i class="fa-solid fa-toolbox"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/tools/sitemap-generator" class="dropdown-item"><i class="fa-solid fa-sitemap"></i> Unlimited Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info"></i> About Us</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper"></i> SEO Guides</a>
+            </nav>
+            <div class="nav-badges">
+                <span id="adminUserBadge" class="badge badge-glow"><i class="fa-solid fa-user-shield"></i> <span id="adminUserName">Admin</span></span>
+                <button onclick="adminLogout()" class="btn btn-sm btn-outline" style="margin-left:0.5rem;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-layout container">
+        <section class="hero-section text-center" style="padding-top:20px; padding-bottom: 20px;">
+            <h1 class="hero-title" style="font-size: 2.2rem;">SEO Admin CMS</h1>
+        </section>
+
+        <!-- Admin Tabs -->
+        <div class="admin-tabs">
+            <div class="admin-tab active" onclick="switchTab('blogTab', this)"><i class="fa-solid fa-newspaper"></i> Blog Articles</div>
+            <div class="admin-tab" onclick="switchTab('enquiriesTab', this)"><i class="fa-solid fa-envelope-open-text"></i> Customer Enquiries</div>
+        </div>
+
+        <!-- BLOG TAB -->
+        <div id="blogTab" class="tab-content active">
+            <!-- Publish Form -->
+            <section class="glass-card admin-card">
+                <div class="card-header-row">
+                    <h2><i class="fa-solid fa-pen-to-square"></i> Publish New SEO Article</h2>
+                </div>
+                <form id="adminPostForm" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group flex-2">
+                            <label for="postTitle"><i class="fa-solid fa-heading"></i> Article Title *</label>
+                            <input type="text" id="postTitle" placeholder="e.g. How to Fix 404 Broken Links in 2026" required>
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="postCategory"><i class="fa-solid fa-folder-open"></i> Category</label>
+                            <select id="postCategory">
+                                <option value="Technical SEO">Technical SEO</option>
+                                <option value="On-Page SEO">On-Page SEO</option>
+                                <option value="SEO Strategy">SEO Strategy</option>
+                                <option value="Link Building">Link Building</option>
+                                <option value="Google Algorithm">Google Algorithm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="postAuthor"><i class="fa-solid fa-user-pen"></i> Author</label>
+                            <input type="text" id="postAuthor" value="SEO Error Auditor Team">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="postReadTime"><i class="fa-solid fa-clock"></i> Read Time</label>
+                            <input type="text" id="postReadTime" value="5 min read">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="postStatus"><i class="fa-solid fa-toggle-on"></i> Status</label>
+                            <select id="postStatus">
+                                <option value="published">Published</option>
+                                <option value="draft">Save as Draft</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postSummary"><i class="fa-solid fa-align-left"></i> Short Summary *</label>
+                        <textarea id="postSummary" rows="2" placeholder="Brief 2-line summary for search engines and blog cards..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="postFeaturedImage"><i class="fa-solid fa-image"></i> Featured Image URL</label>
+                        <div style="display:flex; gap:10px;">
+                            <input type="url" id="postFeaturedImage" placeholder="https://seoerrorauditor.com/images/post-cover.jpg" style="flex:1;">
+                            <input type="file" id="postFeaturedImageFile" accept="image/*" style="display:none;" onchange="uploadFeaturedImage(this, 'postFeaturedImage')">
+                            <button type="button" class="btn btn-outline" onclick="document.getElementById('postFeaturedImageFile').click()"><i class="fa-solid fa-upload"></i> Upload</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-align-justify"></i> Article Body Content *</label>
+                        <!-- TinyMCE -->
+                        <textarea id="postContentEditor"></textarea>
+                    </div>
+
+                    <!-- SEO Fields -->
+                    <div class="seo-fields-section glass-card" style="margin-top:1.5rem; padding:1.5rem;">
+                        <p class="seo-fields-label"><i class="fa-solid fa-magnifying-glass"></i> SEO & Meta Fields (Optional)</p>
+                        <div class="form-row">
+                            <div class="form-group flex-1">
+                                <label><i class="fa-solid fa-t"></i> SEO Title (55-60 chars)</label>
+                                <input type="text" id="postSeoTitle" placeholder="Keyword-rich title for Google..." maxlength="70">
+                            </div>
+                            <div class="form-group flex-1">
+                                <label><i class="fa-solid fa-tags"></i> Tags (comma separated)</label>
+                                <input type="text" id="postTags" placeholder="seo, technical, 2026">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-file-lines"></i> SEO Meta Description (150-160 chars)</label>
+                            <textarea id="postSeoDesc" rows="2" placeholder="Click-worthy description for Google search snippet..." maxlength="170"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-code"></i> JSON-LD Schema Markup</label>
+                            <textarea id="postSchema" rows="4" placeholder='<script type="application/ld+json">...</script>'></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions mt-4">
+                        <button type="submit" id="publishBtn" class="btn btn-emerald btn-glow btn-lg">
+                            <i class="fa-solid fa-paper-plane"></i> Publish Article
+                        </button>
+                        <button type="button" id="draftBtn" class="btn btn-outline btn-lg ml-3">
+                            <i class="fa-solid fa-floppy-disk"></i> Save as Draft
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Articles Table -->
+            <section class="glass-card admin-card my-6">
+                <div class="card-header-row">
+                    <h2><i class="fa-solid fa-newspaper"></i> All Articles (<span id="adminArticleCount">0</span>)</h2>
+                    <button onclick="loadAdminPosts()" class="btn btn-sm btn-outline"><i class="fa-solid fa-rotate"></i> Refresh</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="preview-table">
+                        <thead>
+                            <tr>
+                                <th>Title & Slug</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminPostsTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- ENQUIRIES TAB -->
+        <div id="enquiriesTab" class="tab-content">
+            <section class="glass-card admin-card">
+                <div class="card-header-row">
+                    <h2><i class="fa-solid fa-inbox"></i> Customer Enquiries (<span id="adminEnquiryCount">0</span>)</h2>
+                    <button onclick="loadEnquiries()" class="btn btn-sm btn-outline"><i class="fa-solid fa-rotate"></i> Refresh</button>
+                </div>
+                <div id="enquiriesContainer" style="margin-top:20px;">
+                    <!-- Enquiries populated here -->
+                    <p style="text-align:center; color:#94a3b8;">Loading enquiries...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="/config.js"></script>
+    <script>
+    // ── Auth Guard ──────────────────────────────────────────────────────────────
+    const token = sessionStorage.getItem('adminToken');
+
+    async function checkAuth() {
+        if (!token) {
+            window.location.href = '/admin/login';
+            return;
+        }
+        try {
+            const res = await fetch('/api/admin/me', {
+                headers: { 'Authorization': 'Bearer ' + token }
+            });
+            if (!res.ok) throw new Error('Not authorized');
+            const data = await res.json();
+            document.getElementById('adminUserName').textContent = data.username;
+            document.getElementById('authCheckOverlay').style.display = 'none';
+            loadAdminPosts();
+            loadEnquiries();
+        } catch (e) {
+            window.location.href = '/admin/login';
+        }
+    }
+
+    function adminLogout() {
+        sessionStorage.removeItem('adminToken');
+        sessionStorage.removeItem('adminUser');
+        window.location.href = '/admin/login';
+    }
+
+    // ── Tab Switching ───────────────────────────────────────────────────────────
+    function switchTab(tabId, el) {
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        el.classList.add('active');
+    }
+
+    // ── TinyMCE Init ────────────────────────────────────────────────────────────
+    tinymce.init({
+        selector: '#postContentEditor, #editContentEditor',
+        height: 400,
+        menubar: false,
+        skin: "oxide-dark",
+        content_css: "dark",
+        plugins: [
+            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+            'insertdatetime', 'media', 'table', 'help', 'wordcount'
+        ],
+        toolbar: 'undo redo | blocks | ' +
+        'bold italic backcolor | alignleft aligncenter ' +
+        'alignright alignjustify | bullist numlist outdent indent | ' +
+        'table image media code | removeformat | help',
+        content_style: 'body { font-family:Inter,sans-serif; font-size:16px; color: #cbd5e1; background: #1a2235; }',
+        images_upload_handler: (blobInfo, progress) => new Promise((resolve, reject) => {
+            const formData = new FormData();
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+            fetch('/api/admin/upload', {
+                method: 'POST',
+                headers: { 'Authorization': 'Bearer ' + token },
+                body: formData
+            }).then(res => {
+                if(!res.ok) throw new Error('Upload failed');
+                return res.json();
+            }).then(data => resolve(data.location))
+            .catch(err => reject('HTTP Error: ' + err.message));
+        })
+    });
+
+    // ── Form Submission ─────────────────────────────────────────────────────────
+    document.getElementById('adminPostForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await submitPost('published');
+    });
+
+    document.getElementById('draftBtn').addEventListener('click', async () => {
+        await submitPost('draft');
+    });
+
+    async function submitPost(statusOverride) {
+        const publishBtn = document.getElementById('publishBtn');
+        publishBtn.disabled = true;
+        publishBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Publishing...';
+
+        const tags = document.getElementById('postTags').value.trim()
+            .split(',').map(t => t.trim()).filter(Boolean);
+
+        const postData = {
+            title: document.getElementById('postTitle').value.trim(),
+            category: document.getElementById('postCategory').value,
+            author: document.getElementById('postAuthor').value.trim(),
+            read_time: document.getElementById('postReadTime').value.trim(),
+            summary: document.getElementById('postSummary').value.trim(),
+            content: tinymce.get('postContentEditor').getContent(),
+            status: statusOverride || document.getElementById('postStatus').value,
+            featured_image_url: document.getElementById('postFeaturedImage').value.trim(),
+            seo_title: document.getElementById('postSeoTitle').value.trim(),
+            seo_description: document.getElementById('postSeoDesc').value.trim(),
+            schema_markup: document.getElementById('postSchema').value.trim(),
+            tags: tags,
+        };
+
+        try {
+            const res = await fetch('/api/posts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify(postData)
+            });
+            if (res.status === 401) { adminLogout(); return; }
+            if (!res.ok) throw new Error('Failed to publish post');
+            const data = await res.json();
+            showAdminToast('Success! ' + (statusOverride === 'draft' ? 'Saved as draft: ' : 'Published: ') + '"' + data.post.title + '"');
+            document.getElementById('adminPostForm').reset();
+            tinymce.get('postContentEditor').setContent('');
+            loadAdminPosts();
+        } catch (err) {
+            showAdminToast('Error: ' + err.message, true);
+        } finally {
+            publishBtn.disabled = false;
+            publishBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Publish Article';
+        }
+    }
+
+    // ── Load Posts Table ────────────────────────────────────────────────────────
+    async function loadAdminPosts() {
+        const tbody = document.getElementById('adminPostsTableBody');
+        if (!tbody) return;
+        try {
+            const res = await fetch('/api/posts/all', {
+                headers: { 'Authorization': 'Bearer ' + token }
+            });
+            if (res.status === 401) { adminLogout(); return; }
+            const posts = await res.json();
+            const countEl = document.getElementById('adminArticleCount');
+            if (countEl) countEl.textContent = posts.length;
+
+            if (!posts.length) {
+                tbody.innerHTML = '<tr><td colspan="5" class="text-center py-4" style="color:#94a3b8;">No articles yet. Publish your first article above!</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = posts.map(p => `
+                <tr>
+                    <td>
+                        <strong>${escHtml(p.title)}</strong><br>
+                        <a href="/blog/${escHtml(p.slug)}" target="_blank" style="color:#38bdf8; font-size:0.82rem;">/blog/${escHtml(p.slug)}</a>
+                    </td>
+                    <td><span class="category-badge">${escHtml(p.category)}</span></td>
+                    <td><span class="status-${p.status || 'published'}">${p.status || 'published'}</span></td>
+                    <td>${escHtml(p.date)}</td>
+                    <td style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                        <button class="btn btn-sm btn-outline edit-post-btn" data-slug="${escHtml(p.slug)}">
+                            <i class="fa-solid fa-pen"></i> Edit
+                        </button>
+                        <button class="btn btn-sm btn-outline text-rose delete-post-btn" data-slug="${escHtml(p.slug)}">
+                            <i class="fa-solid fa-trash"></i> Delete
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+
+            document.querySelectorAll('.edit-post-btn').forEach(btn => {
+                btn.addEventListener('click', () => openEditModal(btn.getAttribute('data-slug'), posts));
+            });
+            document.querySelectorAll('.delete-post-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const slug = btn.getAttribute('data-slug');
+                    if (!confirm('Delete article "' + slug + '"? This cannot be undone.')) return;
+                    try {
+                        const res = await fetch('/api/posts/' + slug, {
+                            method: 'DELETE',
+                            headers: { 'Authorization': 'Bearer ' + token }
+                        });
+                        if (res.status === 401) { adminLogout(); return; }
+                        if (res.ok) { showAdminToast('Deleted: ' + slug); loadAdminPosts(); }
+                    } catch(e) { showAdminToast('Failed to delete.', true); }
+                });
+            });
+        } catch (err) {
+            tbody.innerHTML = '<tr><td colspan="5" class="text-center py-4" style="color:#fb7185;">Failed to load posts.</td></tr>';
+        }
+    }
+
+    // ── Edit Modal ──────────────────────────────────────────────────────────────
+    let editingSlug = null;
+
+    function openEditModal(slug, allPosts) {
+        const post = allPosts.find(p => p.slug === slug);
+        if (!post) return;
+        editingSlug = slug;
+
+        document.getElementById('editTitle').value = post.title || '';
+        document.getElementById('editCategory').value = post.category || 'Technical SEO';
+        document.getElementById('editStatus').value = post.status || 'published';
+        document.getElementById('editAuthor').value = post.author || '';
+        document.getElementById('editReadTime').value = post.read_time || '';
+        document.getElementById('editSummary').value = post.summary || '';
+        document.getElementById('editFeaturedImage').value = post.featured_image_url || '';
+        document.getElementById('editSeoTitle').value = post.seo_title || '';
+        document.getElementById('editSeoDesc').value = post.seo_description || '';
+        document.getElementById('editSchema').value = post.schema_markup || '';
+        document.getElementById('editTags').value = (post.tags || []).join(', ');
+        document.getElementById('editCanonical').value = post.canonical_url || '';
+
+        tinymce.get('editContentEditor').setContent(post.content || '');
+        document.getElementById('editModalBackdrop').classList.add('show');
+    }
+
+    function closeEditModal() {
+        document.getElementById('editModalBackdrop').classList.remove('show');
+        editingSlug = null;
+    }
+
+    document.getElementById('editSaveBtn').addEventListener('click', async () => {
+        if (!editingSlug) return;
+        const tags = document.getElementById('editTags').value.trim()
+            .split(',').map(t => t.trim()).filter(Boolean);
+
+        const data = {
+            title: document.getElementById('editTitle').value.trim(),
+            category: document.getElementById('editCategory').value,
+            status: document.getElementById('editStatus').value,
+            author: document.getElementById('editAuthor').value.trim(),
+            read_time: document.getElementById('editReadTime').value.trim(),
+            summary: document.getElementById('editSummary').value.trim(),
+            content: tinymce.get('editContentEditor').getContent(),
+            featured_image_url: document.getElementById('editFeaturedImage').value.trim(),
+            seo_title: document.getElementById('editSeoTitle').value.trim(),
+            seo_description: document.getElementById('editSeoDesc').value.trim(),
+            schema_markup: document.getElementById('editSchema').value.trim(),
+            tags: tags,
+            canonical_url: document.getElementById('editCanonical').value.trim(),
+        };
+
+        try {
+            const res = await fetch('/api/posts/' + editingSlug, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+                body: JSON.stringify(data)
+            });
+            if (res.status === 401) { adminLogout(); return; }
+            if (!res.ok) throw new Error('Failed to update');
+            showAdminToast('Article updated successfully!');
+            closeEditModal();
+            loadAdminPosts();
+        } catch(e) { showAdminToast('Update failed: ' + e.message, true); }
+    });
+
+    document.getElementById('editModalBackdrop').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('editModalBackdrop')) closeEditModal();
+    });
+
+    // ── Load Enquiries ──────────────────────────────────────────────────────────
+    async function loadEnquiries() {
+        const container = document.getElementById('enquiriesContainer');
+        try {
+            const res = await fetch('/api/admin/contacts', {
+                headers: { 'Authorization': 'Bearer ' + token }
+            });
+            if (res.status === 401) { adminLogout(); return; }
+            const contacts = await res.json();
+            document.getElementById('adminEnquiryCount').textContent = contacts.length;
+            
+            if (!contacts.length) {
+                container.innerHTML = '<p style="text-align:center; color:#94a3b8;">No customer enquiries yet.</p>';
+                return;
+            }
+            
+            container.innerHTML = contacts.map(c => `
+                <div class="enquiry-card">
+                    <div class="enquiry-header">
+                        <span><strong>${escHtml(c.name)}</strong> (${escHtml(c.email)})</span>
+                        <span>${new Date(c.submitted_at).toLocaleString()}</span>
+                    </div>
+                    <div class="enquiry-subject">${escHtml(c.subject)}</div>
+                    <div class="enquiry-message">${escHtml(c.message)}</div>
+                </div>
+            `).join('');
+        } catch(err) {
+            container.innerHTML = '<p style="color:#ef4444; text-align:center;">Failed to load enquiries.</p>';
+        }
+    }
+
+    async function uploadFeaturedImage(input, targetId) {
+        if (!input.files || !input.files[0]) return;
+        const formData = new FormData();
+        formData.append('file', input.files[0]);
+        const btn = input.nextElementSibling;
+        const oldText = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+        try {
+            const res = await fetch('/api/admin/upload', {
+                method: 'POST',
+                headers: { 'Authorization': 'Bearer ' + token },
+                body: formData
+            });
+            if (!res.ok) throw new Error('Upload failed');
+            const data = await res.json();
+            document.getElementById(targetId).value = data.location;
+            showAdminToast('Image uploaded successfully');
+        } catch (e) {
+            showAdminToast('Upload failed: ' + e.message, true);
+        } finally {
+            btn.innerHTML = oldText;
+            input.value = '';
+        }
+    }
+
+    // ── Helpers ─────────────────────────────────────────────────────────────────
+    function showAdminToast(msg, isError = false) {
+        const toast = document.getElementById('adminToast');
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.style.background = isError ? '#ef4444' : '#10b981';
+        toast.classList.remove('hidden');
+        setTimeout(() => toast.classList.add('hidden'), 4000);
+    }
+
+    function escHtml(str) {
+        if (!str) return '';
+        return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // Start
+    checkAuth();
+    </script>
+</body>
+</html>
+
+
+
+
+

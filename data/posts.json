@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "how-to-fix-404-broken-links-guide",
+    "title": "How to Find & Fix 404 Broken Links to Restore Google Rankings",
+    "category": "Technical SEO",
+    "read_time": "5 min read",
+    "date": "2026-07-28",
+    "author": "SEO Error Auditor Team",
+    "summary": "Broken 404 links waste crawler budget and frustrate visitors. Learn how to automatically crawl, locate, and fix dead links using 301 redirects.",
+    "content": "<h2>Why 404 Broken Links Hurt Your Search Rankings</h2><p>When search engine bots like Googlebot crawl your website and encounter broken links (404 errors), they waste valuable crawl budget. Moreover, visitors who hit dead-end pages leave immediately, spiking your bounce rate.</p><h3>Step 1: Scan Your Site with SEO Error Auditor</h3><p>Run a free audit on <a href='/'>SEO Error Auditor</a> to automatically generate a complete list of 404 URLs, source pages, and anchor text.</p><h3>Step 2: Implement 301 Redirects</h3><p>Redirect dead URLs to relevant active pages using 301 Permanent Redirects in your <code>.htaccess</code> or web server config.</p><h3>Step 3: Update Internal Hyperlinks</h3><p>Ensure internal navigation menus and blog posts no longer point to deleted URLs.</p>"
+  },
+  {
+    "slug": "complete-technical-seo-audit-checklist-2026",
+    "title": "The Complete Technical SEO Audit Checklist for 2026",
+    "category": "SEO Strategy",
+    "read_time": "8 min read",
+    "date": "2026-07-28",
+    "author": "SEO Error Auditor Team",
+    "summary": "A step-by-step technical SEO checklist to audit page titles, meta descriptions, thin content, site speed, and XML sitemaps.",
+    "content": "<h2>Mastering Technical SEO in 2026</h2><p>Technical SEO ensures that search engines can crawl, index, and render your web pages without impediments. Here is your actionable checklist:</p><h3>1. Title Tag & Meta Description Health</h3><p>Every indexable page must have a unique title tag (50-60 characters) and meta description (150-160 characters) containing primary target keywords.</p><h3>2. Eliminate Thin Content (<150 words)</h3><p>Pages with low word counts provide little value to users and are often flagged as low-quality by Google algorithms.</p><h3>3. Fix XML Sitemap & Robots.txt Directives</h3><p>Ensure your <code>/sitemap.xml</code> lists only 200 OK indexable canonical pages.</p>"
+  },
+  {
+    "slug": "fixing-missing-meta-titles-and-descriptions",
+    "title": "Fixing Missing Meta Titles & Descriptions for Higher Click-Through Rates",
+    "category": "On-Page SEO",
+    "read_time": "4 min read",
+    "date": "2026-07-28",
+    "author": "SEO Error Auditor Team",
+    "summary": "Missing title tags cause Google to auto-generate title snippets that reduce your Organic CTR. Discover how to fix them effortlessly.",
+    "content": "<h2>The Importance of Meta Titles in Search Snippets</h2><p>Meta titles remain one of the strongest on-page ranking signals. Missing or empty title tags force Google to generate titles from page text, often resulting in suboptimal snippets in SERPs.</p><h3>How to Audit Missing Titles</h3><p>Use <a href='/'>SEO Error Auditor</a> to instantly filter all URLs missing meta titles or meta descriptions across your entire site.</p>"
+  },
+  {
+    "slug": "how-to-optimize-site-speed-and-minify-assets",
+    "title": "How to Optimize Site Speed and Minify Assets",
+    "category": "Technical SEO",
+    "read_time": "5 min read",
+    "date": "2026-07-28",
+    "author": "SEO Error Auditor Team",
+    "summary": "Unminified CSS/JS assets slow down load times. Discover how to compress scripts for faster Google rankings.",
+    "content": "<h2>Optimizing Site Speed</h2><p>Site speed is a direct Google ranking factor. Unminified CSS and JavaScript files increase HTTP payload sizes and render-blocking delays.</p><h3>Step 1: Identify Unminified Files</h3><p>Scan your site with <a href='/'>SEO Error Auditor</a> to highlight all uncompressed asset URLs.</p><h3>Step 2: Enable Gzip / Brotli Compression</h3><p>Enable server-level compression to shrink asset sizes by up to 70%.</p>"
+  }
+]

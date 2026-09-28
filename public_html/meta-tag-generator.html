@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Meta Tag Generator — Live SERP Preview | SEO Error Auditor</title>
+    <meta name="description" content="Generate optimized title tags, meta descriptions, and keyword tags with live SERP preview. Free meta tag generator, no sign-up required.">
+    <meta name="keywords" content="meta tag generator free, seo meta tags, title tag generator, meta description generator, seo tag builder online">
+    <link rel="canonical" href="https://seoerrorauditor.com/tools/meta-tag-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoerrorauditor.com/tools/meta-tag-generator">
+    <meta property="og:title" content="Free Meta Tag Generator — Preview in Google & Social | SEO Error Auditor">
+    <meta property="og:description" content="Generate optimized title tags, meta descriptions, and keyword tags with live SERP preview. Free meta tag generator, no sign-up.">
+    <meta property="og:site_name" content="SEO Error Auditor">
+    <meta property="og:image" content="https://seoerrorauditor.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Meta Tag Generator — Preview in Google & Social | SEO Error Auditor">
+    <meta name="twitter:description" content="Generate optimized title tags, meta descriptions, and keyword tags with live SERP preview. Free meta tag generator, no sign-up.">
+    <meta name="twitter:image" content="https://seoerrorauditor.com/logo.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Meta Tag Generator",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+
+    <!-- Background Glow Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                
+                <div class="nav-dropdown" id="navDropdownTools">
+                    <button class="nav-item dropdown-toggle" id="dropdownToggleBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" id="toolsDropdownMenu" role="menu" aria-label="Free SEO Tools">
+                        <a href="/tools/sitemap-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item" role="menuitem"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item" role="menuitem"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                
+                <div class="nav-actions-mobile">
+                    <button id="themeToggleBtnMobile" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                    <a href="/tools/sitemap-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+                </div>
+            </nav>
+            
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                <a href="/tools/sitemap-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout container">
+        
+        <!-- Hero Section -->
+        <section class="tool-hero" style="padding:3rem 0 2rem;">
+            <div class="container text-center">
+                <span class="badge badge-glow" style="margin-bottom:1rem;">On-Page SEO</span>
+                <h1 class="hero-title" style="font-size:2.8rem;margin-bottom:1rem;">Free <span>Meta Tag</span> Generator</h1>
+                <p class="hero-subtitle-top" style="max-width:720px;margin:0 auto 2rem;">Create perfectly optimized title tags, meta descriptions, Open Graph and Twitter Card tags in seconds. Preview exactly how your page appears in Google and social media.</p>
+            </div>
+        </section>
+
+        <!-- Tool Interface -->
+        <div style="max-width:1100px;margin:0 auto 2rem;">
+<p class="hero-subtitle">Generate optimized meta tags for your website in seconds. Boost search engine rankings and social sharing previews.</p>
+
+<div class="tool-card" style="max-width:1100px;margin:2rem auto;padding:2rem;text-align:left;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- Form Inputs -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-sliders" style="color:var(--accent-cyan);"></i> Page Metadata
+      </h3>
+      
+      <div class="form-group mb-3">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+          <label style="font-weight:600;font-size:0.9rem;">Site Title *</label>
+          <span id="mtTitleCount" style="font-size:0.8rem;color:var(--muted-foreground);">0 / 60 chars</span>
+        </div>
+        <input type="text" id="mtTitle" class="form-control" placeholder="e.g. Best Coffee Beans in New York | Roasted Fresh" style="width:100%;">
+      </div>
+
+      <div class="form-group mb-3">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+          <label style="font-weight:600;font-size:0.9rem;">Meta Description *</label>
+          <span id="mtDescCount" style="font-size:0.8rem;color:var(--muted-foreground);">0 / 160 chars</span>
+        </div>
+        <textarea id="mtDesc" rows="3" class="form-control" placeholder="e.g. Discover artisanal single-origin coffee beans roasted daily in NYC. Free shipping on orders over $35." style="width:100%;resize:vertical;"></textarea>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Keywords (comma separated)</label>
+        <input type="text" id="mtKeywords" class="form-control" placeholder="e.g. coffee, espresso, single origin, nyc roasted" style="width:100%;">
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Canonical URL</label>
+        <input type="url" id="mtCanonical" class="form-control" placeholder="https://example.com/page" style="width:100%;">
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Author / Company</label>
+        <input type="text" id="mtAuthor" class="form-control" placeholder="e.g. Acme Coffee Roasters" style="width:100%;">
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;" class="mb-3">
+        <div>
+          <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Robots Index</label>
+          <select id="mtRobotsIndex" class="form-control" style="width:100%;">
+            <option value="index">index (Allow Google)</option>
+            <option value="noindex">noindex (Block Google)</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Robots Follow</label>
+          <select id="mtRobotsFollow" class="form-control" style="width:100%;">
+            <option value="follow">follow (Follow links)</option>
+            <option value="nofollow">nofollow (Don't follow)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Preview & Output -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-code" style="color:var(--accent-indigo);"></i> Generated HTML Meta Tags
+      </h3>
+
+      <!-- Google SERP Snippet Preview -->
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.2rem;margin-bottom:1.2rem;">
+        <div style="font-size:0.75rem;text-transform:uppercase;color:var(--muted-foreground);font-weight:700;margin-bottom:8px;">Google Search Preview</div>
+        <div style="font-size:0.85rem;color:var(--accent-cyan);margin-bottom:4px;word-break:break-all;" id="serpUrl">https://example.com/page</div>
+        <div style="font-size:1.1rem;font-weight:600;color:#3b82f6;margin-bottom:6px;line-height:1.3;" id="serpTitle">Page Title will appear here</div>
+        <div style="font-size:0.88rem;color:var(--muted-foreground);line-height:1.4;" id="serpDesc">Meta description will appear here as users search on Google.</div>
+      </div>
+
+      <!-- Generated Code Box -->
+      <div style="position:relative;">
+        <pre id="mtOutput" style="background:var(--muted);border:1px solid var(--border);border-radius:12px;padding:1.2rem;font-family:monospace;font-size:0.85rem;color:var(--foreground);overflow-x:auto;white-space:pre-wrap;min-height:220px;line-height:1.5;"></pre>
+        <button id="mtCopyBtn" class="btn btn-sm btn-primary" style="position:absolute;top:10px;right:10px;">
+          <i class="fa-solid fa-copy"></i> Copy Tags
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+
+
+    <!-- SEO Content Section -->
+    <section class="seo-content-section container" style="max-width:1100px;margin:0 auto;">
+
+        <!-- How to Use -->
+        <div class="how-it-works-section">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:8px;">How to Use This Tool</h2>
+            <p style="color:var(--muted-foreground);font-size:1rem;margin-bottom:0;">Three simple steps to get your result in seconds.</p>
+            <div class="steps-grid">
+            <div class="step-card glass-card text-center">
+                <div class="step-num">01</div>
+                <div class="step-icon"><i class="fa-solid fa-globe"></i></div>
+                <h3>Enter Your Page Details</h3>
+                <p>Fill in your page title, description, URL, and choose the page type (article, website, etc.).</p>
+            </div>
+            <div class="step-card glass-card text-center">
+                <div class="step-num">02</div>
+                <div class="step-icon"><i class="fa-solid fa-eye"></i></div>
+                <h3>Preview in Real-Time</h3>
+                <p>See a live preview of how your page will appear in Google search results and social media shares.</p>
+            </div>
+            <div class="step-card glass-card text-center">
+                <div class="step-num">03</div>
+                <div class="step-icon"><i class="fa-solid fa-copy"></i></div>
+                <h3>Copy & Paste to &lt;head&gt;</h3>
+                <p>Copy the generated meta tag code and paste it directly into your HTML page's &lt;head&gt; section.</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Benefits / Features -->
+        <div style="margin-top:60px;margin-bottom:60px;">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:8px;">Why Use Our Tool?</h2>
+            <p style="color:var(--muted-foreground);font-size:1rem;margin-bottom:2rem;">Built for SEO professionals, developers, and content creators.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+                
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-magnifying-glass" style="color:#6366f1;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Boost Search Visibility</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Optimized title tags (50-60 chars) and meta descriptions (150-160 chars) improve your click-through rate from search results.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-share-nodes" style="color:#ec4899;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Control Social Sharing</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Open Graph and Twitter Card tags let you control how your page looks when shared on Facebook, Twitter, LinkedIn, and more.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-gauge-high" style="color:#f59e0b;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Instant Preview</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">See a live Google SERP preview and social card preview as you type — no guesswork required.</p>
+                </div>
+                <div class="glass-card" style="padding:1.5rem;">
+                    <div style="width:48px;height:48px;background:rgba(99,102,241,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:1px solid rgba(99,102,241,0.2);">
+                        <i class="fa-solid fa-code" style="color:#10b981;font-size:1.3rem;"></i>
+                    </div>
+                    <h3 style="font-family:var(--font-title);font-size:1.1rem;color:var(--foreground);margin-bottom:8px;">Complete Code Output</h3>
+                    <p style="color:var(--muted-foreground);font-size:0.93rem;line-height:1.6;margin:0;">Generates all essential tags: title, description, robots, canonical, og:*, twitter:* in one clean code block.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="glass-card" style="padding:2.5rem;margin-top:60px;margin-bottom:60px;">
+            <h2 style="font-family:var(--font-title);font-size:1.8rem;font-weight:800;color:var(--foreground);margin-bottom:1.5rem;">
+                <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:10px;"></i>Frequently Asked Questions
+            </h2>
+            
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>What is the ideal length for a title tag?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">Google typically displays the first 50-60 characters of a title tag. Keep it under 60 characters with your primary keyword near the beginning.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>How long should meta descriptions be?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">Meta descriptions should be 150-160 characters long. Google may rewrite them, but a well-written description improves CTR from search results.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>Do meta keywords still matter for SEO?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">No. Google officially ignores the meta keywords tag. Focus on title tags and meta descriptions instead.</p>
+                    </div>
+                    <div style="border-bottom:1px solid var(--border);padding:1.25rem 0;">
+                        <h4 style="font-family:var(--font-title);font-size:1rem;color:var(--foreground);margin-bottom:8px;cursor:pointer;">
+                            <i class="fa-solid fa-circle-question" style="color:var(--accent-cyan);margin-right:8px;"></i>What is an Open Graph tag?
+                        </h4>
+                        <p style="color:var(--muted-foreground);font-size:0.95rem;line-height:1.7;margin:0;padding-left:28px;">Open Graph tags control how your page appears when shared on social media platforms like Facebook, LinkedIn, and WhatsApp — including title, image, and description.</p>
+                    </div>
+        </div>
+
+    </section>
+
+    </main>
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Word Counter",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seoerrorauditor.com/">
+    <meta property="og:title" content="Free SEO Tools Online 2026">
+    <meta property="og:description" content="Use free SEO tools online at SEO Error Auditor.">
+    <meta property="og:image" content="https://seoerrorauditor.com/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://seoerrorauditor.com/logo.png">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=13">
+</head>
+<body>
+
+    <!-- Background Glow Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Header Navigation -->
+        <!-- Header Navigation -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="/" class="brand" aria-label="SEO Error Auditor Home">
+                <img src="/logo.png" alt="SEO Error Auditor Logo" class="brand-logo-img" width="300" height="85">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+                <a href="/" class="nav-item"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+                
+                <div class="nav-dropdown" id="navDropdownTools">
+                    <button class="nav-item dropdown-toggle" id="dropdownToggleBtn" aria-haspopup="true" aria-expanded="false" type="button">
+                        <i class="fa-solid fa-toolbox" aria-hidden="true"></i> Free SEO Tools <i class="fa-solid fa-chevron-down text-xs ml-1" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" id="toolsDropdownMenu" role="menu" aria-label="Free SEO Tools">
+                        
+                        
+                        
+                        <a href="/tools/sitemap-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-sitemap"></i> Sitemap Generator</a>
+                        <a href="/tools/schema-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> JSON-LD Schema Builder</a>
+                        <a href="/tools/meta-tag-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-tags"></i> Meta Tags Generator</a>
+                        <a href="/tools/og-graph-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-share-nodes"></i> Open Graph Generator</a>
+                        <a href="/tools/twitter-card-generator" class="dropdown-item" role="menuitem"><i class="fa-brands fa-x-twitter"></i> Twitter Card Generator</a>
+                        <a href="/tools/robots-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-shield-halved"></i> Robots.txt Generator</a>
+                        <a href="/tools/llms-txt-generator" class="dropdown-item" role="menuitem"><i class="fa-solid fa-robot"></i> LLMs.txt AI Generator</a>
+                        <a href="/tools/html-to-text" class="dropdown-item" role="menuitem"><i class="fa-solid fa-file-lines"></i> HTML to Text Converter</a>
+                        <a href="/tools/text-to-html" class="dropdown-item" role="menuitem"><i class="fa-solid fa-code"></i> Text to HTML Converter</a>
+                    </div>
+                </div>
+
+                <a href="/about" class="nav-item"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> About</a>
+                <a href="/contact" class="nav-item"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact</a>
+                <a href="/blog" class="nav-item"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> SEO Guides</a>
+                
+                <div class="nav-actions-mobile">
+                    <button id="themeToggleBtnMobile" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                    <a href="/tools/keyword-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+                </div>
+            </nav>
+            
+            <div class="nav-actions" id="navActionsDesktop">
+                <button id="themeToggleBtn" class="btn btn-sm btn-outline theme-toggle-btn" aria-label="Toggle dark/light mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+                <a href="/tools/keyword-generator" class="btn-amber-nav"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Free Tools</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout container">
+        
+        <!-- Hero Section -->
+        <section class="hero-section text-center tool-hero my-4">
+            
+<p class="hero-subtitle">Generate optimized meta tags for your website in seconds. Boost search engine rankings and social sharing previews.</p>
+
+<div class="tool-card" style="max-width:1100px;margin:2rem auto;padding:2rem;text-align:left;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    <!-- Form Inputs -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-sliders" style="color:var(--accent-cyan);"></i> Page Metadata
+      </h3>
+      
+      <div class="form-group mb-3">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+          <label style="font-weight:600;font-size:0.9rem;">Site Title *</label>
+          <span id="mtTitleCount" style="font-size:0.8rem;color:var(--muted-foreground);">0 / 60 chars</span>
+        </div>
+        <input type="text" id="mtTitle" class="form-control" placeholder="e.g. Best Coffee Beans in New York | Roasted Fresh" style="width:100%;">
+      </div>
+
+      <div class="form-group mb-3">
+        <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+          <label style="font-weight:600;font-size:0.9rem;">Meta Description *</label>
+          <span id="mtDescCount" style="font-size:0.8rem;color:var(--muted-foreground);">0 / 160 chars</span>
+        </div>
+        <textarea id="mtDesc" rows="3" class="form-control" placeholder="e.g. Discover artisanal single-origin coffee beans roasted daily in NYC. Free shipping on orders over $35." style="width:100%;resize:vertical;"></textarea>
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Keywords (comma separated)</label>
+        <input type="text" id="mtKeywords" class="form-control" placeholder="e.g. coffee, espresso, single origin, nyc roasted" style="width:100%;">
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Canonical URL</label>
+        <input type="url" id="mtCanonical" class="form-control" placeholder="https://example.com/page" style="width:100%;">
+      </div>
+
+      <div class="form-group mb-3">
+        <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Author / Company</label>
+        <input type="text" id="mtAuthor" class="form-control" placeholder="e.g. Acme Coffee Roasters" style="width:100%;">
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;" class="mb-3">
+        <div>
+          <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Robots Index</label>
+          <select id="mtRobotsIndex" class="form-control" style="width:100%;">
+            <option value="index">index (Allow Google)</option>
+            <option value="noindex">noindex (Block Google)</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-weight:600;font-size:0.9rem;margin-bottom:4px;display:block;">Robots Follow</label>
+          <select id="mtRobotsFollow" class="form-control" style="width:100%;">
+            <option value="follow">follow (Follow links)</option>
+            <option value="nofollow">nofollow (Don't follow)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Preview & Output -->
+    <div>
+      <h3 style="font-size:1.15rem;margin-bottom:1.2rem;color:var(--foreground);display:flex;align-items:center;gap:8px;">
+        <i class="fa-solid fa-code" style="color:var(--accent-indigo);"></i> Generated HTML Meta Tags
+      </h3>
+
+      <!-- Google SERP Snippet Preview -->
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.2rem;margin-bottom:1.2rem;">
+        <div style="font-size:0.75rem;text-transform:uppercase;color:var(--muted-foreground);font-weight:700;margin-bottom:8px;">Google Search Preview</div>
+        <div style="font-size:0.85rem;color:var(--accent-cyan);margin-bottom:4px;word-break:break-all;" id="serpUrl">https://example.com/page</div>
+        <div style="font-size:1.1rem;font-weight:600;color:#3b82f6;margin-bottom:6px;line-height:1.3;" id="serpTitle">Page Title will appear here</div>
+        <div style="font-size:0.88rem;color:var(--muted-foreground);line-height:1.4;" id="serpDesc">Meta description will appear here as users search on Google.</div>
+      </div>
+
+      <!-- Generated Code Box -->
+      <div style="position:relative;">
+        <pre id="mtOutput" style="background:var(--muted);border:1px solid var(--border);border-radius:12px;padding:1.2rem;font-family:monospace;font-size:0.85rem;color:var(--foreground);overflow-x:auto;white-space:pre-wrap;min-height:220px;line-height:1.5;"></pre>
+        <button id="mtCopyBtn" class="btn btn-sm btn-primary" style="position:absolute;top:10px;right:10px;">
+          <i class="fa-solid fa-copy"></i> Copy Tags
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </section>
+        
+        
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const title = document.getElementById('mtTitle');
+  const desc = document.getElementById('mtDesc');
+  const kw = document.getElementById('mtKeywords');
+  const canon = document.getElementById('mtCanonical');
+  const author = document.getElementById('mtAuthor');
+  const rIndex = document.getElementById('mtRobotsIndex');
+  const rFollow = document.getElementById('mtRobotsFollow');
+
+  const titleCount = document.getElementById('mtTitleCount');
+  const descCount = document.getElementById('mtDescCount');
+  const serpTitle = document.getElementById('serpTitle');
+  const serpDesc = document.getElementById('serpDesc');
+  const serpUrl = document.getElementById('serpUrl');
+  const output = document.getElementById('mtOutput');
+  const copyBtn = document.getElementById('mtCopyBtn');
+
+  function update() {
+    const t = title.value.trim();
+    const d = desc.value.trim();
+    const k = kw.value.trim();
+    const c = canon.value.trim();
+    const a = author.value.trim();
+    const ri = rIndex.value;
+    const rf = rFollow.value;
+
+    titleCount.textContent = `${t.length} / 60 chars`;
+    titleCount.style.color = t.length > 60 ? '#ef4444' : 'var(--muted-foreground)';
+
+    descCount.textContent = `${d.length} / 160 chars`;
+    descCount.style.color = d.length > 160 ? '#ef4444' : 'var(--muted-foreground)';
+
+    serpTitle.textContent = t || 'Page Title will appear here';
+    serpDesc.textContent = d || 'Meta description will appear here as users search on Google.';
+    serpUrl.textContent = c || 'https://example.com/page';
+
+    let tags = `<!-- Primary Meta Tags -->\n`;
+    tags += `<title>${t || 'Website Title'}</title>\n`;
+    tags += `<meta name="title" content="${t || 'Website Title'}">\n`;
+    if (d) tags += `<meta name="description" content="${d}">\n`;
+    if (k) tags += `<meta name="keywords" content="${k}">\n`;
+    if (a) tags += `<meta name="author" content="${a}">\n`;
+    tags += `<meta name="robots" content="index, follow, max-image-preview:large">\n`;
+    tags += `<meta name="viewport" content="width=device-width, initial-scale=1.0">\n`;
+    tags += `<meta charset="UTF-8">\n`;
+    if (c) tags += `<link rel="canonical" href="${c}">\n`;
+
+    output.textContent = tags;
+  }
+
+  [title, desc, kw, canon, author, rIndex, rFollow].forEach(el => {
+    el.addEventListener('input', update);
+    el.addEventListener('change', update);
+  });
+
+  update();
+
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(output.textContent).then(() => {
+      copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      setTimeout(() => { copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Tags'; }, 2000);
+    });
+  });
+});
+</script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand-col">
+                <a href="/" class="brand footer-brand">
+                    <img src="/footer-logo.png" alt="SEO Error Auditor" class="footer-logo-img">
+                </a>
+                <p class="footer-desc">Free technical SEO tools for webmasters, marketers & SEO agencies. No sign-up required.</p>
+                <div class="footer-socials">
+                    <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> 100% Free &amp; Secure</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Free SEO Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="/tools/sitemap-generator">XML Sitemap Generator</a></li>
+                    <li><a href="/tools/schema-generator">JSON-LD Schema Builder</a></li>
+                    <li><a href="/tools/meta-tag-generator">Meta Tags Generator</a></li>
+                    <li><a href="/tools/og-graph-generator">Open Graph Generator</a></li>
+                    <li><a href="/tools/robots-txt-generator">Robots.txt Generator</a></li>
+                    <li><a href="/tools/llms-txt-generator">LLMs.txt Generator</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="/blog">SEO Guides &amp; Tutorials</a></li>
+                    <li><a href="/blog/complete-technical-seo-audit-checklist-2026">Technical SEO Checklist 2026</a></li>
+                    <li><a href="/blog/how-to-fix-404-broken-links-guide">404 Error Fix Guide</a></li>
+                    <li><a href="/#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company &amp; Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom text-center">
+            <p>&copy; 2026 SEO Error Auditor (seoerrorauditor.com). All rights reserved.</p>
+        </div>
+    </footer>
+<script src="/config.js"></script>
+<script src="/app.js?v=13"></script>
+
+            <!-- Enquiry Popup -->
+    <div id="enquiryPopupOverlay" class="popup-overlay">
+        <div class="popup-modal">
+            <button class="popup-close" id="popupCloseBtn" aria-label="Close">&times;</button>
+
+            <div class="popup-header">
+                <div class="popup-header-icon">&#128640;</div>
+                <h3>Need Help With Your Project?</h3>
+                <p>Tell us a few details &amp; our expert team will get in touch with you shortly.</p>
+            </div>
+
+            <div class="popup-body">
+                <form id="enquiryFormPopup" autocomplete="off">
+                    <div class="popup-field">
+                        <label for="popupName">Full Name</label>
+                        <div class="popup-input-wrap">
+                            <input type="text" id="popupName" placeholder="Enter your full name" required minlength="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                    </div>
+                    <div class="popup-field">
+                        <label for="popupEmail">Email Address</label>
+                        <div class="popup-input-wrap">
+                            <input type="email" id="popupEmail" placeholder="Enter your email" required>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="popup-field">
+                        <label for="popupMobile">Mobile Number</label>
+                        <div class="popup-input-wrap">
+                            <input type="tel" id="popupMobile" placeholder="Enter your mobile number" pattern="[\+]?[0-9]{10,13}" required>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pii"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                    </div>
+                    <button type="submit" class="popup-submit-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Send Enquiry
+                    </button>
+                    <div id="popupFormMessage" class="popup-form-msg"></div>
+                </form>
+                <div class="popup-trust">
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> 100% Secure</span>
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> No Spam Ever</span>
+                    <span class="popup-trust-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Quick Response</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
