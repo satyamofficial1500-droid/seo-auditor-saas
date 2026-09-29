@@ -163,7 +163,7 @@ html[data-theme="light"] .bg-blob { opacity: 0.08; }
     object-fit: contain;
     filter: none;
     transition: transform 0.2s ease;
-    mix-blend-mode: screen;
+    mix-blend-mode: lighten;
 }
 
 html[data-theme="light"] .brand-logo-img {
