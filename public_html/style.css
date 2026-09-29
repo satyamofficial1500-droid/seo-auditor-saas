@@ -1,4 +1,4 @@
-﻿/* SEO Auditor AI - Custom SaaS Stylesheet */
+/* SEO Auditor AI - Custom SaaS Stylesheet */
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    THEME SYSTEM: Single Source of Truth
@@ -1385,5 +1385,151 @@ html[data-theme="light"] .popup-trust { border-top-color: #e5e7eb; }
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TOOL FORM UI — Form Controls, Cards & Layout
+   ════════════════════════════════════════════════════════════ */
+
+/* Form Control Base */
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--input, #111827);
+    color: var(--foreground);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    box-sizing: border-box;
+}
+.form-control:focus {
+    border-color: var(--accent-indigo);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+.form-control::placeholder {
+    color: var(--muted-foreground);
+    opacity: 0.7;
+}
+select.form-control {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+}
+textarea.form-control {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* Tool Card Container */
+.tool-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 2rem;
+    box-sizing: border-box;
+}
+
+/* Tool Section Wrapper — ensure full width within main */
+.main-layout .tool-card,
+.main-layout > div > .tool-card {
+    max-width: 100%;
+}
+
+/* Tool Grid: inputs left, output right */
+.tool-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+@media (max-width: 768px) {
+    .tool-grid-2col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Schema Type Buttons */
+.schema-type-btn {
+    white-space: nowrap;
+}
+
+/* Code Output Area */
+#scOutput,
+#ogOutput,
+[id$="Output"] {
+    background: var(--code-background, #090d16) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    padding: 1.2rem !important;
+    font-family: 'Fira Code', 'Cascadia Code', monospace !important;
+    font-size: 0.85rem !important;
+    color: #a5f3fc !important; /* cyan-like code color */
+    min-height: 280px !important;
+    line-height: 1.6 !important;
+    overflow-x: auto !important;
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+}
+
+/* Tool Hero fixes */
+.tool-hero {
+    padding: 3rem 0 1.5rem;
+}
+.tool-hero .badge {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* Form group spacing */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--muted-foreground);
+    margin-bottom: 5px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+}
+
+/* Light mode overrides for form */
+html[data-theme="light"] .form-control {
+    background: #f8fafc;
+    color: #1e293b;
+    border-color: #e2e8f0;
+}
+html[data-theme="light"] .form-control:focus {
+    border-color: var(--accent-indigo);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+html[data-theme="light"] .tool-card {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+html[data-theme="light"] #scOutput,
+html[data-theme="light"] #ogOutput,
+html[data-theme="light"] [id$="Output"] {
+    background: #f1f5f9 !important;
+    color: #1d4ed8 !important;
+}
+
+/* Ensure no overflow on tool pages */
+.main-layout.container {
+    overflow-x: hidden;
 }
 
